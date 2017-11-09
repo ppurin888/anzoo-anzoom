@@ -1,9 +1,27 @@
 group 'anzoo-anzoom'
 version '0.0.1'
 
-apply plugin: 'java'
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url 'https://repo.spring.io/libs-milestone'
+        }
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.0.0.M5'
+        classpath 'org.jooq:jooq-codegen:3.10.0'
+        classpath 'mysql:mysql-connector-java:6.0.6'
+    }
+}
 
-sourceCompatibility = 1.8
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+sourceCompatibility = 1.9
+targetCompatibility = 1.9
 
 repositories {
     maven {
@@ -14,4 +32,37 @@ repositories {
 dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-webflux', version: '2.0.0.M5'
     compile group: 'org.springframework.security', name: 'spring-security-webflux', version: '5.0.0.M5'
+    compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.0.0.M5'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-jooq', version: '2.0.0.M5'
+
+    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
 }
+
+def props = new Properties()
+file("src/main/resources/application.properties").withInputStream { props.load(it) }
+
+def writer = new StringWriter()
+def xml = new groovy.xml.MarkupBuilder(writer).configuration('xmlns': 'http://www.jooq.org/xsd/jooq-codegen-3.10.0.xsd') {
+    jdbc() {
+        driver(props.getProperty('spring.datasource.driver-class-name'))
+        url(props.getProperty('spring.datasource.url'))
+        user(props.getProperty('spring.datasource.username'))
+        password(props.getProperty('spring.datasource.password'))
+    }
+    generator() {
+        database() {
+        }
+
+        generate([:]) {
+            pojos true
+            daos true
+        }
+
+        target() {
+            packageName('com.anzoo_anzoom.database')
+            directory('src/main/java')
+        }
+    }
+}
+
+org.jooq.util.GenerationTool.generate(writer.toString())
