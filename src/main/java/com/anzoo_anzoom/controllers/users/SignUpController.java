@@ -1,12 +1,15 @@
 package com.anzoo_anzoom.controllers.users;
 
+import com.anzoo_anzoom.database.anzoo_anzoom.tables.pojos.Users;
+import com.anzoo_anzoom.presenters.SignUpPresenter;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
+
+import static org.springframework.http.MediaType.APPLICATION_JSON;
 
 @Component
 public class SignUpController {
@@ -30,12 +33,18 @@ public class SignUpController {
         // 6. JWT 생성
         // 7. Redirect to: main
 
-//        ParameterizedTypeReference<Map<String, Object>> typeReference = new ParameterizedTypeReference<Map<String, Object>>() {};
-//        Mono<Map<String, Object>> monoUser = request.bodyToMono(typeReference);
-//        User user = User.of(monoUser.block());
+        // Sample response
+        return request.bodyToMono(SignUpPresenter.class)
+                .flatMap(presenter -> {
+                    final Users user = new Users();
+                    user.setAuthId(presenter.getAuthId());
+                    user.setFullName(presenter.getFullName());
 
-//        return ServerResponse.ok().body();
+                    if (user.getAuthId() == null ||
+                            user.getFullName() == null)
+                        return null;
 
-        return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).syncBody("{\"content\":\"Hello World\"}");
+                    return ServerResponse.ok().contentType(APPLICATION_JSON).body(Mono.just(user), Users.class);
+                }).switchIfEmpty(ServerResponse.badRequest().build());
     }
 }
