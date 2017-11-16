@@ -31,7 +31,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbLockWaits extends TableImpl<InnodbLockWaitsRecord> {
 
-    private static final long serialVersionUID = 272223665;
+    private static final long serialVersionUID = -447133391;
 
     /**
      * The reference instance of <code>information_schema.INNODB_LOCK_WAITS</code>
@@ -49,22 +49,22 @@ public class InnodbLockWaits extends TableImpl<InnodbLockWaitsRecord> {
     /**
      * The column <code>information_schema.INNODB_LOCK_WAITS.requesting_trx_id</code>.
      */
-    public final TableField<InnodbLockWaitsRecord, String> REQUESTING_TRX_ID = createField("requesting_trx_id", org.jooq.impl.SQLDataType.VARCHAR(18).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbLockWaitsRecord, String> REQUESTING_TRX_ID = createField("requesting_trx_id", org.jooq.impl.SQLDataType.VARCHAR(18).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_LOCK_WAITS.requested_lock_id</code>.
      */
-    public final TableField<InnodbLockWaitsRecord, String> REQUESTED_LOCK_ID = createField("requested_lock_id", org.jooq.impl.SQLDataType.VARCHAR(81).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbLockWaitsRecord, String> REQUESTED_LOCK_ID = createField("requested_lock_id", org.jooq.impl.SQLDataType.VARCHAR(81).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_LOCK_WAITS.blocking_trx_id</code>.
      */
-    public final TableField<InnodbLockWaitsRecord, String> BLOCKING_TRX_ID = createField("blocking_trx_id", org.jooq.impl.SQLDataType.VARCHAR(18).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbLockWaitsRecord, String> BLOCKING_TRX_ID = createField("blocking_trx_id", org.jooq.impl.SQLDataType.VARCHAR(18).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_LOCK_WAITS.blocking_lock_id</code>.
      */
-    public final TableField<InnodbLockWaitsRecord, String> BLOCKING_LOCK_ID = createField("blocking_lock_id", org.jooq.impl.SQLDataType.VARCHAR(81).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbLockWaitsRecord, String> BLOCKING_LOCK_ID = createField("blocking_lock_id", org.jooq.impl.SQLDataType.VARCHAR(81).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * Create a <code>information_schema.INNODB_LOCK_WAITS</code> table reference

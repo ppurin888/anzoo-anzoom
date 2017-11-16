@@ -33,7 +33,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Events extends TableImpl<EventsRecord> {
 
-    private static final long serialVersionUID = 1573410406;
+    private static final long serialVersionUID = -2080669096;
 
     /**
      * The reference instance of <code>information_schema.EVENTS</code>
@@ -51,102 +51,102 @@ public class Events extends TableImpl<EventsRecord> {
     /**
      * The column <code>information_schema.EVENTS.EVENT_CATALOG</code>.
      */
-    public final TableField<EventsRecord, String> EVENT_CATALOG = createField("EVENT_CATALOG", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EventsRecord, String> EVENT_CATALOG = createField("EVENT_CATALOG", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.EVENT_SCHEMA</code>.
      */
-    public final TableField<EventsRecord, String> EVENT_SCHEMA = createField("EVENT_SCHEMA", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EventsRecord, String> EVENT_SCHEMA = createField("EVENT_SCHEMA", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.EVENT_NAME</code>.
      */
-    public final TableField<EventsRecord, String> EVENT_NAME = createField("EVENT_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EventsRecord, String> EVENT_NAME = createField("EVENT_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.DEFINER</code>.
      */
-    public final TableField<EventsRecord, String> DEFINER = createField("DEFINER", org.jooq.impl.SQLDataType.VARCHAR(189).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EventsRecord, String> DEFINER = createField("DEFINER", org.jooq.impl.SQLDataType.VARCHAR(93).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.TIME_ZONE</code>.
      */
-    public final TableField<EventsRecord, String> TIME_ZONE = createField("TIME_ZONE", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EventsRecord, String> TIME_ZONE = createField("TIME_ZONE", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.EVENT_BODY</code>.
      */
-    public final TableField<EventsRecord, String> EVENT_BODY = createField("EVENT_BODY", org.jooq.impl.SQLDataType.VARCHAR(8).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EventsRecord, String> EVENT_BODY = createField("EVENT_BODY", org.jooq.impl.SQLDataType.VARCHAR(8).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.EVENT_DEFINITION</code>.
      */
-    public final TableField<EventsRecord, String> EVENT_DEFINITION = createField("EVENT_DEFINITION", org.jooq.impl.SQLDataType.CLOB.nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.CLOB)), this, "");
+    public final TableField<EventsRecord, String> EVENT_DEFINITION = createField("EVENT_DEFINITION", org.jooq.impl.SQLDataType.CLOB.nullable(false), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.EVENT_TYPE</code>.
      */
-    public final TableField<EventsRecord, String> EVENT_TYPE = createField("EVENT_TYPE", org.jooq.impl.SQLDataType.VARCHAR(9).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EventsRecord, String> EVENT_TYPE = createField("EVENT_TYPE", org.jooq.impl.SQLDataType.VARCHAR(9).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.EXECUTE_AT</code>.
      */
-    public final TableField<EventsRecord, Timestamp> EXECUTE_AT = createField("EXECUTE_AT", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<EventsRecord, Timestamp> EXECUTE_AT = createField("EXECUTE_AT", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
      * The column <code>information_schema.EVENTS.INTERVAL_VALUE</code>.
      */
-    public final TableField<EventsRecord, String> INTERVAL_VALUE = createField("INTERVAL_VALUE", org.jooq.impl.SQLDataType.VARCHAR(256).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EventsRecord, String> INTERVAL_VALUE = createField("INTERVAL_VALUE", org.jooq.impl.SQLDataType.VARCHAR(256), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.INTERVAL_FIELD</code>.
      */
-    public final TableField<EventsRecord, String> INTERVAL_FIELD = createField("INTERVAL_FIELD", org.jooq.impl.SQLDataType.VARCHAR(18).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EventsRecord, String> INTERVAL_FIELD = createField("INTERVAL_FIELD", org.jooq.impl.SQLDataType.VARCHAR(18), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.SQL_MODE</code>.
      */
-    public final TableField<EventsRecord, String> SQL_MODE = createField("SQL_MODE", org.jooq.impl.SQLDataType.VARCHAR(8192).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EventsRecord, String> SQL_MODE = createField("SQL_MODE", org.jooq.impl.SQLDataType.VARCHAR(8192).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.STARTS</code>.
      */
-    public final TableField<EventsRecord, Timestamp> STARTS = createField("STARTS", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<EventsRecord, Timestamp> STARTS = createField("STARTS", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
      * The column <code>information_schema.EVENTS.ENDS</code>.
      */
-    public final TableField<EventsRecord, Timestamp> ENDS = createField("ENDS", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<EventsRecord, Timestamp> ENDS = createField("ENDS", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
      * The column <code>information_schema.EVENTS.STATUS</code>.
      */
-    public final TableField<EventsRecord, String> STATUS = createField("STATUS", org.jooq.impl.SQLDataType.VARCHAR(18).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EventsRecord, String> STATUS = createField("STATUS", org.jooq.impl.SQLDataType.VARCHAR(18).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.ON_COMPLETION</code>.
      */
-    public final TableField<EventsRecord, String> ON_COMPLETION = createField("ON_COMPLETION", org.jooq.impl.SQLDataType.VARCHAR(12).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EventsRecord, String> ON_COMPLETION = createField("ON_COMPLETION", org.jooq.impl.SQLDataType.VARCHAR(12).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.CREATED</code>.
      */
-    public final TableField<EventsRecord, Timestamp> CREATED = createField("CREATED", org.jooq.impl.SQLDataType.TIMESTAMP.nullable(false).defaultValue(org.jooq.impl.DSL.inline("'0000-00-00 00:00:00'", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<EventsRecord, Timestamp> CREATED = createField("CREATED", org.jooq.impl.SQLDataType.TIMESTAMP.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0000-00-00 00:00:00", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.LAST_ALTERED</code>.
      */
-    public final TableField<EventsRecord, Timestamp> LAST_ALTERED = createField("LAST_ALTERED", org.jooq.impl.SQLDataType.TIMESTAMP.nullable(false).defaultValue(org.jooq.impl.DSL.inline("'0000-00-00 00:00:00'", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<EventsRecord, Timestamp> LAST_ALTERED = createField("LAST_ALTERED", org.jooq.impl.SQLDataType.TIMESTAMP.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0000-00-00 00:00:00", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.LAST_EXECUTED</code>.
      */
-    public final TableField<EventsRecord, Timestamp> LAST_EXECUTED = createField("LAST_EXECUTED", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<EventsRecord, Timestamp> LAST_EXECUTED = createField("LAST_EXECUTED", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
      * The column <code>information_schema.EVENTS.EVENT_COMMENT</code>.
      */
-    public final TableField<EventsRecord, String> EVENT_COMMENT = createField("EVENT_COMMENT", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EventsRecord, String> EVENT_COMMENT = createField("EVENT_COMMENT", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.ORIGINATOR</code>.
@@ -156,17 +156,17 @@ public class Events extends TableImpl<EventsRecord> {
     /**
      * The column <code>information_schema.EVENTS.CHARACTER_SET_CLIENT</code>.
      */
-    public final TableField<EventsRecord, String> CHARACTER_SET_CLIENT = createField("CHARACTER_SET_CLIENT", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EventsRecord, String> CHARACTER_SET_CLIENT = createField("CHARACTER_SET_CLIENT", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.COLLATION_CONNECTION</code>.
      */
-    public final TableField<EventsRecord, String> COLLATION_CONNECTION = createField("COLLATION_CONNECTION", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EventsRecord, String> COLLATION_CONNECTION = createField("COLLATION_CONNECTION", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.EVENTS.DATABASE_COLLATION</code>.
      */
-    public final TableField<EventsRecord, String> DATABASE_COLLATION = createField("DATABASE_COLLATION", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EventsRecord, String> DATABASE_COLLATION = createField("DATABASE_COLLATION", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * Create a <code>information_schema.EVENTS</code> table reference

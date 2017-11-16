@@ -80,10 +80,17 @@ public class UserPasswordEncryptionTypesDao extends DAOImpl<UserPasswordEncrypti
     }
 
     /**
-     * Fetch records that have <code>title IN (values)</code>
+     * Fetch records that have <code>description IN (values)</code>
      */
-    public List<com.anzoo_anzoom.database.anzoo_anzoom.tables.pojos.UserPasswordEncryptionTypes> fetchByTitle(String... values) {
-        return fetch(UserPasswordEncryptionTypes.USER_PASSWORD_ENCRYPTION_TYPES.TITLE, values);
+    public List<com.anzoo_anzoom.database.anzoo_anzoom.tables.pojos.UserPasswordEncryptionTypes> fetchByDescription(String... values) {
+        return fetch(UserPasswordEncryptionTypes.USER_PASSWORD_ENCRYPTION_TYPES.DESCRIPTION, values);
+    }
+
+    /**
+     * Fetch records that have <code>url IN (values)</code>
+     */
+    public List<com.anzoo_anzoom.database.anzoo_anzoom.tables.pojos.UserPasswordEncryptionTypes> fetchByUrl(String... values) {
+        return fetch(UserPasswordEncryptionTypes.USER_PASSWORD_ENCRYPTION_TYPES.URL, values);
     }
 
     /**

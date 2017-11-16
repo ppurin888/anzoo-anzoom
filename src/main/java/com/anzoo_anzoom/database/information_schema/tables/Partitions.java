@@ -34,7 +34,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Partitions extends TableImpl<PartitionsRecord> {
 
-    private static final long serialVersionUID = -2040400946;
+    private static final long serialVersionUID = -869635040;
 
     /**
      * The reference instance of <code>information_schema.PARTITIONS</code>
@@ -52,62 +52,62 @@ public class Partitions extends TableImpl<PartitionsRecord> {
     /**
      * The column <code>information_schema.PARTITIONS.TABLE_CATALOG</code>.
      */
-    public final TableField<PartitionsRecord, String> TABLE_CATALOG = createField("TABLE_CATALOG", org.jooq.impl.SQLDataType.VARCHAR(512).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PartitionsRecord, String> TABLE_CATALOG = createField("TABLE_CATALOG", org.jooq.impl.SQLDataType.VARCHAR(512).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.TABLE_SCHEMA</code>.
      */
-    public final TableField<PartitionsRecord, String> TABLE_SCHEMA = createField("TABLE_SCHEMA", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PartitionsRecord, String> TABLE_SCHEMA = createField("TABLE_SCHEMA", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.TABLE_NAME</code>.
      */
-    public final TableField<PartitionsRecord, String> TABLE_NAME = createField("TABLE_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PartitionsRecord, String> TABLE_NAME = createField("TABLE_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.PARTITION_NAME</code>.
      */
-    public final TableField<PartitionsRecord, String> PARTITION_NAME = createField("PARTITION_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PartitionsRecord, String> PARTITION_NAME = createField("PARTITION_NAME", org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.SUBPARTITION_NAME</code>.
      */
-    public final TableField<PartitionsRecord, String> SUBPARTITION_NAME = createField("SUBPARTITION_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PartitionsRecord, String> SUBPARTITION_NAME = createField("SUBPARTITION_NAME", org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.PARTITION_ORDINAL_POSITION</code>.
      */
-    public final TableField<PartitionsRecord, ULong> PARTITION_ORDINAL_POSITION = createField("PARTITION_ORDINAL_POSITION", org.jooq.impl.SQLDataType.BIGINTUNSIGNED.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINTUNSIGNED)), this, "");
+    public final TableField<PartitionsRecord, ULong> PARTITION_ORDINAL_POSITION = createField("PARTITION_ORDINAL_POSITION", org.jooq.impl.SQLDataType.BIGINTUNSIGNED, this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.SUBPARTITION_ORDINAL_POSITION</code>.
      */
-    public final TableField<PartitionsRecord, ULong> SUBPARTITION_ORDINAL_POSITION = createField("SUBPARTITION_ORDINAL_POSITION", org.jooq.impl.SQLDataType.BIGINTUNSIGNED.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINTUNSIGNED)), this, "");
+    public final TableField<PartitionsRecord, ULong> SUBPARTITION_ORDINAL_POSITION = createField("SUBPARTITION_ORDINAL_POSITION", org.jooq.impl.SQLDataType.BIGINTUNSIGNED, this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.PARTITION_METHOD</code>.
      */
-    public final TableField<PartitionsRecord, String> PARTITION_METHOD = createField("PARTITION_METHOD", org.jooq.impl.SQLDataType.VARCHAR(18).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PartitionsRecord, String> PARTITION_METHOD = createField("PARTITION_METHOD", org.jooq.impl.SQLDataType.VARCHAR(18), this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.SUBPARTITION_METHOD</code>.
      */
-    public final TableField<PartitionsRecord, String> SUBPARTITION_METHOD = createField("SUBPARTITION_METHOD", org.jooq.impl.SQLDataType.VARCHAR(12).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PartitionsRecord, String> SUBPARTITION_METHOD = createField("SUBPARTITION_METHOD", org.jooq.impl.SQLDataType.VARCHAR(12), this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.PARTITION_EXPRESSION</code>.
      */
-    public final TableField<PartitionsRecord, String> PARTITION_EXPRESSION = createField("PARTITION_EXPRESSION", org.jooq.impl.SQLDataType.CLOB.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.CLOB)), this, "");
+    public final TableField<PartitionsRecord, String> PARTITION_EXPRESSION = createField("PARTITION_EXPRESSION", org.jooq.impl.SQLDataType.CLOB, this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.SUBPARTITION_EXPRESSION</code>.
      */
-    public final TableField<PartitionsRecord, String> SUBPARTITION_EXPRESSION = createField("SUBPARTITION_EXPRESSION", org.jooq.impl.SQLDataType.CLOB.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.CLOB)), this, "");
+    public final TableField<PartitionsRecord, String> SUBPARTITION_EXPRESSION = createField("SUBPARTITION_EXPRESSION", org.jooq.impl.SQLDataType.CLOB, this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.PARTITION_DESCRIPTION</code>.
      */
-    public final TableField<PartitionsRecord, String> PARTITION_DESCRIPTION = createField("PARTITION_DESCRIPTION", org.jooq.impl.SQLDataType.CLOB.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.CLOB)), this, "");
+    public final TableField<PartitionsRecord, String> PARTITION_DESCRIPTION = createField("PARTITION_DESCRIPTION", org.jooq.impl.SQLDataType.CLOB, this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.TABLE_ROWS</code>.
@@ -127,7 +127,7 @@ public class Partitions extends TableImpl<PartitionsRecord> {
     /**
      * The column <code>information_schema.PARTITIONS.MAX_DATA_LENGTH</code>.
      */
-    public final TableField<PartitionsRecord, ULong> MAX_DATA_LENGTH = createField("MAX_DATA_LENGTH", org.jooq.impl.SQLDataType.BIGINTUNSIGNED.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINTUNSIGNED)), this, "");
+    public final TableField<PartitionsRecord, ULong> MAX_DATA_LENGTH = createField("MAX_DATA_LENGTH", org.jooq.impl.SQLDataType.BIGINTUNSIGNED, this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.INDEX_LENGTH</code>.
@@ -142,37 +142,37 @@ public class Partitions extends TableImpl<PartitionsRecord> {
     /**
      * The column <code>information_schema.PARTITIONS.CREATE_TIME</code>.
      */
-    public final TableField<PartitionsRecord, Timestamp> CREATE_TIME = createField("CREATE_TIME", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<PartitionsRecord, Timestamp> CREATE_TIME = createField("CREATE_TIME", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.UPDATE_TIME</code>.
      */
-    public final TableField<PartitionsRecord, Timestamp> UPDATE_TIME = createField("UPDATE_TIME", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<PartitionsRecord, Timestamp> UPDATE_TIME = createField("UPDATE_TIME", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.CHECK_TIME</code>.
      */
-    public final TableField<PartitionsRecord, Timestamp> CHECK_TIME = createField("CHECK_TIME", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<PartitionsRecord, Timestamp> CHECK_TIME = createField("CHECK_TIME", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.CHECKSUM</code>.
      */
-    public final TableField<PartitionsRecord, ULong> CHECKSUM = createField("CHECKSUM", org.jooq.impl.SQLDataType.BIGINTUNSIGNED.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINTUNSIGNED)), this, "");
+    public final TableField<PartitionsRecord, ULong> CHECKSUM = createField("CHECKSUM", org.jooq.impl.SQLDataType.BIGINTUNSIGNED, this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.PARTITION_COMMENT</code>.
      */
-    public final TableField<PartitionsRecord, String> PARTITION_COMMENT = createField("PARTITION_COMMENT", org.jooq.impl.SQLDataType.VARCHAR(80).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PartitionsRecord, String> PARTITION_COMMENT = createField("PARTITION_COMMENT", org.jooq.impl.SQLDataType.VARCHAR(80).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.NODEGROUP</code>.
      */
-    public final TableField<PartitionsRecord, String> NODEGROUP = createField("NODEGROUP", org.jooq.impl.SQLDataType.VARCHAR(12).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PartitionsRecord, String> NODEGROUP = createField("NODEGROUP", org.jooq.impl.SQLDataType.VARCHAR(12).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PARTITIONS.TABLESPACE_NAME</code>.
      */
-    public final TableField<PartitionsRecord, String> TABLESPACE_NAME = createField("TABLESPACE_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PartitionsRecord, String> TABLESPACE_NAME = createField("TABLESPACE_NAME", org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * Create a <code>information_schema.PARTITIONS</code> table reference

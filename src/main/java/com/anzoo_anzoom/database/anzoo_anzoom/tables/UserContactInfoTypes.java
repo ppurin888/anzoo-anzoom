@@ -40,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class UserContactInfoTypes extends TableImpl<UserContactInfoTypesRecord> {
 
-    private static final long serialVersionUID = 1305621931;
+    private static final long serialVersionUID = -1508326582;
 
     /**
      * The reference instance of <code>anzoo_anzoom.user_contact_info_types</code>
@@ -68,17 +68,17 @@ public class UserContactInfoTypes extends TableImpl<UserContactInfoTypesRecord> 
     /**
      * The column <code>anzoo_anzoom.user_contact_info_types.created_at</code>.
      */
-    public final TableField<UserContactInfoTypesRecord, Timestamp> CREATED_AT = createField("created_at", org.jooq.impl.SQLDataType.TIMESTAMP.nullable(false).defaultValue(org.jooq.impl.DSL.inline("current_timestamp()", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<UserContactInfoTypesRecord, Timestamp> CREATED_AT = createField("created_at", org.jooq.impl.SQLDataType.TIMESTAMP.nullable(false).defaultValue(org.jooq.impl.DSL.inline("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
 
     /**
      * The column <code>anzoo_anzoom.user_contact_info_types.updated_at</code>.
      */
-    public final TableField<UserContactInfoTypesRecord, Timestamp> UPDATED_AT = createField("updated_at", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<UserContactInfoTypesRecord, Timestamp> UPDATED_AT = createField("updated_at", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
      * The column <code>anzoo_anzoom.user_contact_info_types.deleted_at</code>.
      */
-    public final TableField<UserContactInfoTypesRecord, Timestamp> DELETED_AT = createField("deleted_at", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<UserContactInfoTypesRecord, Timestamp> DELETED_AT = createField("deleted_at", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
      * Create a <code>anzoo_anzoom.user_contact_info_types</code> table reference

@@ -32,7 +32,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbFtIndexTable extends TableImpl<InnodbFtIndexTableRecord> {
 
-    private static final long serialVersionUID = -1934240076;
+    private static final long serialVersionUID = -2030061356;
 
     /**
      * The reference instance of <code>information_schema.INNODB_FT_INDEX_TABLE</code>
@@ -50,7 +50,7 @@ public class InnodbFtIndexTable extends TableImpl<InnodbFtIndexTableRecord> {
     /**
      * The column <code>information_schema.INNODB_FT_INDEX_TABLE.WORD</code>.
      */
-    public final TableField<InnodbFtIndexTableRecord, String> WORD = createField("WORD", org.jooq.impl.SQLDataType.VARCHAR(337).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbFtIndexTableRecord, String> WORD = createField("WORD", org.jooq.impl.SQLDataType.VARCHAR(337).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_FT_INDEX_TABLE.FIRST_DOC_ID</code>.

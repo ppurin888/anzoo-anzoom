@@ -25,7 +25,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbTrx implements Serializable {
 
-    private static final long serialVersionUID = 526216671;
+    private static final long serialVersionUID = -152043344;
 
     private String    trxId;
     private String    trxState;
@@ -48,6 +48,7 @@ public class InnodbTrx implements Serializable {
     private Integer   trxForeignKeyChecks;
     private String    trxLastForeignKeyError;
     private Integer   trxAdaptiveHashLatched;
+    private ULong     trxAdaptiveHashTimeout;
     private Integer   trxIsReadOnly;
     private Integer   trxAutocommitNonLocking;
 
@@ -75,6 +76,7 @@ public class InnodbTrx implements Serializable {
         this.trxForeignKeyChecks = value.trxForeignKeyChecks;
         this.trxLastForeignKeyError = value.trxLastForeignKeyError;
         this.trxAdaptiveHashLatched = value.trxAdaptiveHashLatched;
+        this.trxAdaptiveHashTimeout = value.trxAdaptiveHashTimeout;
         this.trxIsReadOnly = value.trxIsReadOnly;
         this.trxAutocommitNonLocking = value.trxAutocommitNonLocking;
     }
@@ -101,6 +103,7 @@ public class InnodbTrx implements Serializable {
         Integer   trxForeignKeyChecks,
         String    trxLastForeignKeyError,
         Integer   trxAdaptiveHashLatched,
+        ULong     trxAdaptiveHashTimeout,
         Integer   trxIsReadOnly,
         Integer   trxAutocommitNonLocking
     ) {
@@ -125,6 +128,7 @@ public class InnodbTrx implements Serializable {
         this.trxForeignKeyChecks = trxForeignKeyChecks;
         this.trxLastForeignKeyError = trxLastForeignKeyError;
         this.trxAdaptiveHashLatched = trxAdaptiveHashLatched;
+        this.trxAdaptiveHashTimeout = trxAdaptiveHashTimeout;
         this.trxIsReadOnly = trxIsReadOnly;
         this.trxAutocommitNonLocking = trxAutocommitNonLocking;
     }
@@ -297,6 +301,14 @@ public class InnodbTrx implements Serializable {
         this.trxAdaptiveHashLatched = trxAdaptiveHashLatched;
     }
 
+    public ULong getTrxAdaptiveHashTimeout() {
+        return this.trxAdaptiveHashTimeout;
+    }
+
+    public void setTrxAdaptiveHashTimeout(ULong trxAdaptiveHashTimeout) {
+        this.trxAdaptiveHashTimeout = trxAdaptiveHashTimeout;
+    }
+
     public Integer getTrxIsReadOnly() {
         return this.trxIsReadOnly;
     }
@@ -338,6 +350,7 @@ public class InnodbTrx implements Serializable {
         sb.append(", ").append(trxForeignKeyChecks);
         sb.append(", ").append(trxLastForeignKeyError);
         sb.append(", ").append(trxAdaptiveHashLatched);
+        sb.append(", ").append(trxAdaptiveHashTimeout);
         sb.append(", ").append(trxIsReadOnly);
         sb.append(", ").append(trxAutocommitNonLocking);
 

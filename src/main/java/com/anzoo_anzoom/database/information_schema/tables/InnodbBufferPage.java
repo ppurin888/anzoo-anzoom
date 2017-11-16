@@ -32,7 +32,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbBufferPage extends TableImpl<InnodbBufferPageRecord> {
 
-    private static final long serialVersionUID = 693492166;
+    private static final long serialVersionUID = 625099910;
 
     /**
      * The reference instance of <code>information_schema.INNODB_BUFFER_PAGE</code>
@@ -70,7 +70,7 @@ public class InnodbBufferPage extends TableImpl<InnodbBufferPageRecord> {
     /**
      * The column <code>information_schema.INNODB_BUFFER_PAGE.PAGE_TYPE</code>.
      */
-    public final TableField<InnodbBufferPageRecord, String> PAGE_TYPE = createField("PAGE_TYPE", org.jooq.impl.SQLDataType.VARCHAR(64).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbBufferPageRecord, String> PAGE_TYPE = createField("PAGE_TYPE", org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * The column <code>information_schema.INNODB_BUFFER_PAGE.FLUSH_TYPE</code>.
@@ -85,7 +85,7 @@ public class InnodbBufferPage extends TableImpl<InnodbBufferPageRecord> {
     /**
      * The column <code>information_schema.INNODB_BUFFER_PAGE.IS_HASHED</code>.
      */
-    public final TableField<InnodbBufferPageRecord, String> IS_HASHED = createField("IS_HASHED", org.jooq.impl.SQLDataType.VARCHAR(3).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbBufferPageRecord, String> IS_HASHED = createField("IS_HASHED", org.jooq.impl.SQLDataType.VARCHAR(3), this, "");
 
     /**
      * The column <code>information_schema.INNODB_BUFFER_PAGE.NEWEST_MODIFICATION</code>.
@@ -105,12 +105,12 @@ public class InnodbBufferPage extends TableImpl<InnodbBufferPageRecord> {
     /**
      * The column <code>information_schema.INNODB_BUFFER_PAGE.TABLE_NAME</code>.
      */
-    public final TableField<InnodbBufferPageRecord, String> TABLE_NAME = createField("TABLE_NAME", org.jooq.impl.SQLDataType.VARCHAR(1024).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbBufferPageRecord, String> TABLE_NAME = createField("TABLE_NAME", org.jooq.impl.SQLDataType.VARCHAR(1024), this, "");
 
     /**
      * The column <code>information_schema.INNODB_BUFFER_PAGE.INDEX_NAME</code>.
      */
-    public final TableField<InnodbBufferPageRecord, String> INDEX_NAME = createField("INDEX_NAME", org.jooq.impl.SQLDataType.VARCHAR(1024).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbBufferPageRecord, String> INDEX_NAME = createField("INDEX_NAME", org.jooq.impl.SQLDataType.VARCHAR(1024), this, "");
 
     /**
      * The column <code>information_schema.INNODB_BUFFER_PAGE.NUMBER_RECORDS</code>.
@@ -130,17 +130,17 @@ public class InnodbBufferPage extends TableImpl<InnodbBufferPageRecord> {
     /**
      * The column <code>information_schema.INNODB_BUFFER_PAGE.PAGE_STATE</code>.
      */
-    public final TableField<InnodbBufferPageRecord, String> PAGE_STATE = createField("PAGE_STATE", org.jooq.impl.SQLDataType.VARCHAR(64).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbBufferPageRecord, String> PAGE_STATE = createField("PAGE_STATE", org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * The column <code>information_schema.INNODB_BUFFER_PAGE.IO_FIX</code>.
      */
-    public final TableField<InnodbBufferPageRecord, String> IO_FIX = createField("IO_FIX", org.jooq.impl.SQLDataType.VARCHAR(64).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbBufferPageRecord, String> IO_FIX = createField("IO_FIX", org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * The column <code>information_schema.INNODB_BUFFER_PAGE.IS_OLD</code>.
      */
-    public final TableField<InnodbBufferPageRecord, String> IS_OLD = createField("IS_OLD", org.jooq.impl.SQLDataType.VARCHAR(3).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbBufferPageRecord, String> IS_OLD = createField("IS_OLD", org.jooq.impl.SQLDataType.VARCHAR(3), this, "");
 
     /**
      * The column <code>information_schema.INNODB_BUFFER_PAGE.FREE_PAGE_CLOCK</code>.

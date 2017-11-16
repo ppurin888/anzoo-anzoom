@@ -31,7 +31,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbCmpPerIndexReset extends TableImpl<InnodbCmpPerIndexResetRecord> {
 
-    private static final long serialVersionUID = 2136813989;
+    private static final long serialVersionUID = 292951621;
 
     /**
      * The reference instance of <code>information_schema.INNODB_CMP_PER_INDEX_RESET</code>
@@ -49,17 +49,17 @@ public class InnodbCmpPerIndexReset extends TableImpl<InnodbCmpPerIndexResetReco
     /**
      * The column <code>information_schema.INNODB_CMP_PER_INDEX_RESET.database_name</code>.
      */
-    public final TableField<InnodbCmpPerIndexResetRecord, String> DATABASE_NAME = createField("database_name", org.jooq.impl.SQLDataType.VARCHAR(192).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbCmpPerIndexResetRecord, String> DATABASE_NAME = createField("database_name", org.jooq.impl.SQLDataType.VARCHAR(192).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_CMP_PER_INDEX_RESET.table_name</code>.
      */
-    public final TableField<InnodbCmpPerIndexResetRecord, String> TABLE_NAME = createField("table_name", org.jooq.impl.SQLDataType.VARCHAR(192).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbCmpPerIndexResetRecord, String> TABLE_NAME = createField("table_name", org.jooq.impl.SQLDataType.VARCHAR(192).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_CMP_PER_INDEX_RESET.index_name</code>.
      */
-    public final TableField<InnodbCmpPerIndexResetRecord, String> INDEX_NAME = createField("index_name", org.jooq.impl.SQLDataType.VARCHAR(192).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbCmpPerIndexResetRecord, String> INDEX_NAME = createField("index_name", org.jooq.impl.SQLDataType.VARCHAR(192).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_CMP_PER_INDEX_RESET.compress_ops</code>.

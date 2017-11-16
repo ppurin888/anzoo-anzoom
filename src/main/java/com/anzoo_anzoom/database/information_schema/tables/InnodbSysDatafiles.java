@@ -32,7 +32,7 @@ import org.jooq.types.UInteger;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbSysDatafiles extends TableImpl<InnodbSysDatafilesRecord> {
 
-    private static final long serialVersionUID = -2145333495;
+    private static final long serialVersionUID = 509338089;
 
     /**
      * The reference instance of <code>information_schema.INNODB_SYS_DATAFILES</code>
@@ -55,7 +55,7 @@ public class InnodbSysDatafiles extends TableImpl<InnodbSysDatafilesRecord> {
     /**
      * The column <code>information_schema.INNODB_SYS_DATAFILES.PATH</code>.
      */
-    public final TableField<InnodbSysDatafilesRecord, String> PATH = createField("PATH", org.jooq.impl.SQLDataType.VARCHAR(4000).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbSysDatafilesRecord, String> PATH = createField("PATH", org.jooq.impl.SQLDataType.VARCHAR(4000).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * Create a <code>information_schema.INNODB_SYS_DATAFILES</code> table reference

@@ -22,7 +22,7 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Plugins implements Serializable {
 
-    private static final long serialVersionUID = 594997872;
+    private static final long serialVersionUID = -683915901;
 
     private String pluginName;
     private String pluginVersion;
@@ -35,8 +35,6 @@ public class Plugins implements Serializable {
     private String pluginDescription;
     private String pluginLicense;
     private String loadOption;
-    private String pluginMaturity;
-    private String pluginAuthVersion;
 
     public Plugins() {}
 
@@ -52,8 +50,6 @@ public class Plugins implements Serializable {
         this.pluginDescription = value.pluginDescription;
         this.pluginLicense = value.pluginLicense;
         this.loadOption = value.loadOption;
-        this.pluginMaturity = value.pluginMaturity;
-        this.pluginAuthVersion = value.pluginAuthVersion;
     }
 
     public Plugins(
@@ -67,9 +63,7 @@ public class Plugins implements Serializable {
         String pluginAuthor,
         String pluginDescription,
         String pluginLicense,
-        String loadOption,
-        String pluginMaturity,
-        String pluginAuthVersion
+        String loadOption
     ) {
         this.pluginName = pluginName;
         this.pluginVersion = pluginVersion;
@@ -82,8 +76,6 @@ public class Plugins implements Serializable {
         this.pluginDescription = pluginDescription;
         this.pluginLicense = pluginLicense;
         this.loadOption = loadOption;
-        this.pluginMaturity = pluginMaturity;
-        this.pluginAuthVersion = pluginAuthVersion;
     }
 
     public String getPluginName() {
@@ -174,22 +166,6 @@ public class Plugins implements Serializable {
         this.loadOption = loadOption;
     }
 
-    public String getPluginMaturity() {
-        return this.pluginMaturity;
-    }
-
-    public void setPluginMaturity(String pluginMaturity) {
-        this.pluginMaturity = pluginMaturity;
-    }
-
-    public String getPluginAuthVersion() {
-        return this.pluginAuthVersion;
-    }
-
-    public void setPluginAuthVersion(String pluginAuthVersion) {
-        this.pluginAuthVersion = pluginAuthVersion;
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Plugins (");
@@ -205,8 +181,6 @@ public class Plugins implements Serializable {
         sb.append(", ").append(pluginDescription);
         sb.append(", ").append(pluginLicense);
         sb.append(", ").append(loadOption);
-        sb.append(", ").append(pluginMaturity);
-        sb.append(", ").append(pluginAuthVersion);
 
         sb.append(")");
         return sb.toString();

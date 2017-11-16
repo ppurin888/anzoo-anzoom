@@ -31,7 +31,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Statistics extends TableImpl<StatisticsRecord> {
 
-    private static final long serialVersionUID = -1558498337;
+    private static final long serialVersionUID = 865108873;
 
     /**
      * The reference instance of <code>information_schema.STATISTICS</code>
@@ -49,17 +49,17 @@ public class Statistics extends TableImpl<StatisticsRecord> {
     /**
      * The column <code>information_schema.STATISTICS.TABLE_CATALOG</code>.
      */
-    public final TableField<StatisticsRecord, String> TABLE_CATALOG = createField("TABLE_CATALOG", org.jooq.impl.SQLDataType.VARCHAR(512).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<StatisticsRecord, String> TABLE_CATALOG = createField("TABLE_CATALOG", org.jooq.impl.SQLDataType.VARCHAR(512).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.STATISTICS.TABLE_SCHEMA</code>.
      */
-    public final TableField<StatisticsRecord, String> TABLE_SCHEMA = createField("TABLE_SCHEMA", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<StatisticsRecord, String> TABLE_SCHEMA = createField("TABLE_SCHEMA", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.STATISTICS.TABLE_NAME</code>.
      */
-    public final TableField<StatisticsRecord, String> TABLE_NAME = createField("TABLE_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<StatisticsRecord, String> TABLE_NAME = createField("TABLE_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.STATISTICS.NON_UNIQUE</code>.
@@ -69,12 +69,12 @@ public class Statistics extends TableImpl<StatisticsRecord> {
     /**
      * The column <code>information_schema.STATISTICS.INDEX_SCHEMA</code>.
      */
-    public final TableField<StatisticsRecord, String> INDEX_SCHEMA = createField("INDEX_SCHEMA", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<StatisticsRecord, String> INDEX_SCHEMA = createField("INDEX_SCHEMA", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.STATISTICS.INDEX_NAME</code>.
      */
-    public final TableField<StatisticsRecord, String> INDEX_NAME = createField("INDEX_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<StatisticsRecord, String> INDEX_NAME = createField("INDEX_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.STATISTICS.SEQ_IN_INDEX</code>.
@@ -84,47 +84,47 @@ public class Statistics extends TableImpl<StatisticsRecord> {
     /**
      * The column <code>information_schema.STATISTICS.COLUMN_NAME</code>.
      */
-    public final TableField<StatisticsRecord, String> COLUMN_NAME = createField("COLUMN_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<StatisticsRecord, String> COLUMN_NAME = createField("COLUMN_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.STATISTICS.COLLATION</code>.
      */
-    public final TableField<StatisticsRecord, String> COLLATION = createField("COLLATION", org.jooq.impl.SQLDataType.VARCHAR(1).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<StatisticsRecord, String> COLLATION = createField("COLLATION", org.jooq.impl.SQLDataType.VARCHAR(1), this, "");
 
     /**
      * The column <code>information_schema.STATISTICS.CARDINALITY</code>.
      */
-    public final TableField<StatisticsRecord, Long> CARDINALITY = createField("CARDINALITY", org.jooq.impl.SQLDataType.BIGINT.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINT)), this, "");
+    public final TableField<StatisticsRecord, Long> CARDINALITY = createField("CARDINALITY", org.jooq.impl.SQLDataType.BIGINT, this, "");
 
     /**
      * The column <code>information_schema.STATISTICS.SUB_PART</code>.
      */
-    public final TableField<StatisticsRecord, Long> SUB_PART = createField("SUB_PART", org.jooq.impl.SQLDataType.BIGINT.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINT)), this, "");
+    public final TableField<StatisticsRecord, Long> SUB_PART = createField("SUB_PART", org.jooq.impl.SQLDataType.BIGINT, this, "");
 
     /**
      * The column <code>information_schema.STATISTICS.PACKED</code>.
      */
-    public final TableField<StatisticsRecord, String> PACKED = createField("PACKED", org.jooq.impl.SQLDataType.VARCHAR(10).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<StatisticsRecord, String> PACKED = createField("PACKED", org.jooq.impl.SQLDataType.VARCHAR(10), this, "");
 
     /**
      * The column <code>information_schema.STATISTICS.NULLABLE</code>.
      */
-    public final TableField<StatisticsRecord, String> NULLABLE = createField("NULLABLE", org.jooq.impl.SQLDataType.VARCHAR(3).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<StatisticsRecord, String> NULLABLE = createField("NULLABLE", org.jooq.impl.SQLDataType.VARCHAR(3).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.STATISTICS.INDEX_TYPE</code>.
      */
-    public final TableField<StatisticsRecord, String> INDEX_TYPE = createField("INDEX_TYPE", org.jooq.impl.SQLDataType.VARCHAR(16).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<StatisticsRecord, String> INDEX_TYPE = createField("INDEX_TYPE", org.jooq.impl.SQLDataType.VARCHAR(16).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.STATISTICS.COMMENT</code>.
      */
-    public final TableField<StatisticsRecord, String> COMMENT = createField("COMMENT", org.jooq.impl.SQLDataType.VARCHAR(16).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<StatisticsRecord, String> COMMENT = createField("COMMENT", org.jooq.impl.SQLDataType.VARCHAR(16), this, "");
 
     /**
      * The column <code>information_schema.STATISTICS.INDEX_COMMENT</code>.
      */
-    public final TableField<StatisticsRecord, String> INDEX_COMMENT = createField("INDEX_COMMENT", org.jooq.impl.SQLDataType.VARCHAR(1024).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<StatisticsRecord, String> INDEX_COMMENT = createField("INDEX_COMMENT", org.jooq.impl.SQLDataType.VARCHAR(1024).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * Create a <code>information_schema.STATISTICS</code> table reference

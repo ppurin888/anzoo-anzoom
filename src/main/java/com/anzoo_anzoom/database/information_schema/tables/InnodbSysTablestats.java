@@ -32,7 +32,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbSysTablestats extends TableImpl<InnodbSysTablestatsRecord> {
 
-    private static final long serialVersionUID = 689110454;
+    private static final long serialVersionUID = 750786358;
 
     /**
      * The reference instance of <code>information_schema.INNODB_SYS_TABLESTATS</code>
@@ -55,12 +55,12 @@ public class InnodbSysTablestats extends TableImpl<InnodbSysTablestatsRecord> {
     /**
      * The column <code>information_schema.INNODB_SYS_TABLESTATS.NAME</code>.
      */
-    public final TableField<InnodbSysTablestatsRecord, String> NAME = createField("NAME", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbSysTablestatsRecord, String> NAME = createField("NAME", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_SYS_TABLESTATS.STATS_INITIALIZED</code>.
      */
-    public final TableField<InnodbSysTablestatsRecord, String> STATS_INITIALIZED = createField("STATS_INITIALIZED", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbSysTablestatsRecord, String> STATS_INITIALIZED = createField("STATS_INITIALIZED", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_SYS_TABLESTATS.NUM_ROWS</code>.

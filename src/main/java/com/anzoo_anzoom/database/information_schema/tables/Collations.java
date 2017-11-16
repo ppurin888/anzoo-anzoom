@@ -31,7 +31,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Collations extends TableImpl<CollationsRecord> {
 
-    private static final long serialVersionUID = -50304835;
+    private static final long serialVersionUID = -754521155;
 
     /**
      * The reference instance of <code>information_schema.COLLATIONS</code>
@@ -49,12 +49,12 @@ public class Collations extends TableImpl<CollationsRecord> {
     /**
      * The column <code>information_schema.COLLATIONS.COLLATION_NAME</code>.
      */
-    public final TableField<CollationsRecord, String> COLLATION_NAME = createField("COLLATION_NAME", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<CollationsRecord, String> COLLATION_NAME = createField("COLLATION_NAME", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.COLLATIONS.CHARACTER_SET_NAME</code>.
      */
-    public final TableField<CollationsRecord, String> CHARACTER_SET_NAME = createField("CHARACTER_SET_NAME", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<CollationsRecord, String> CHARACTER_SET_NAME = createField("CHARACTER_SET_NAME", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.COLLATIONS.ID</code>.
@@ -64,12 +64,12 @@ public class Collations extends TableImpl<CollationsRecord> {
     /**
      * The column <code>information_schema.COLLATIONS.IS_DEFAULT</code>.
      */
-    public final TableField<CollationsRecord, String> IS_DEFAULT = createField("IS_DEFAULT", org.jooq.impl.SQLDataType.VARCHAR(3).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<CollationsRecord, String> IS_DEFAULT = createField("IS_DEFAULT", org.jooq.impl.SQLDataType.VARCHAR(3).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.COLLATIONS.IS_COMPILED</code>.
      */
-    public final TableField<CollationsRecord, String> IS_COMPILED = createField("IS_COMPILED", org.jooq.impl.SQLDataType.VARCHAR(3).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<CollationsRecord, String> IS_COMPILED = createField("IS_COMPILED", org.jooq.impl.SQLDataType.VARCHAR(3).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.COLLATIONS.SORTLEN</code>.

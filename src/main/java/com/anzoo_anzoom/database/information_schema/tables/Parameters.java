@@ -32,7 +32,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Parameters extends TableImpl<ParametersRecord> {
 
-    private static final long serialVersionUID = 1929336598;
+    private static final long serialVersionUID = -1452639910;
 
     /**
      * The reference instance of <code>information_schema.PARAMETERS</code>
@@ -50,17 +50,17 @@ public class Parameters extends TableImpl<ParametersRecord> {
     /**
      * The column <code>information_schema.PARAMETERS.SPECIFIC_CATALOG</code>.
      */
-    public final TableField<ParametersRecord, String> SPECIFIC_CATALOG = createField("SPECIFIC_CATALOG", org.jooq.impl.SQLDataType.VARCHAR(512).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<ParametersRecord, String> SPECIFIC_CATALOG = createField("SPECIFIC_CATALOG", org.jooq.impl.SQLDataType.VARCHAR(512).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PARAMETERS.SPECIFIC_SCHEMA</code>.
      */
-    public final TableField<ParametersRecord, String> SPECIFIC_SCHEMA = createField("SPECIFIC_SCHEMA", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<ParametersRecord, String> SPECIFIC_SCHEMA = createField("SPECIFIC_SCHEMA", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PARAMETERS.SPECIFIC_NAME</code>.
      */
-    public final TableField<ParametersRecord, String> SPECIFIC_NAME = createField("SPECIFIC_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<ParametersRecord, String> SPECIFIC_NAME = createField("SPECIFIC_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PARAMETERS.ORDINAL_POSITION</code>.
@@ -70,62 +70,62 @@ public class Parameters extends TableImpl<ParametersRecord> {
     /**
      * The column <code>information_schema.PARAMETERS.PARAMETER_MODE</code>.
      */
-    public final TableField<ParametersRecord, String> PARAMETER_MODE = createField("PARAMETER_MODE", org.jooq.impl.SQLDataType.VARCHAR(5).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<ParametersRecord, String> PARAMETER_MODE = createField("PARAMETER_MODE", org.jooq.impl.SQLDataType.VARCHAR(5), this, "");
 
     /**
      * The column <code>information_schema.PARAMETERS.PARAMETER_NAME</code>.
      */
-    public final TableField<ParametersRecord, String> PARAMETER_NAME = createField("PARAMETER_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<ParametersRecord, String> PARAMETER_NAME = createField("PARAMETER_NAME", org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * The column <code>information_schema.PARAMETERS.DATA_TYPE</code>.
      */
-    public final TableField<ParametersRecord, String> DATA_TYPE = createField("DATA_TYPE", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<ParametersRecord, String> DATA_TYPE = createField("DATA_TYPE", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PARAMETERS.CHARACTER_MAXIMUM_LENGTH</code>.
      */
-    public final TableField<ParametersRecord, Integer> CHARACTER_MAXIMUM_LENGTH = createField("CHARACTER_MAXIMUM_LENGTH", org.jooq.impl.SQLDataType.INTEGER.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.INTEGER)), this, "");
+    public final TableField<ParametersRecord, Integer> CHARACTER_MAXIMUM_LENGTH = createField("CHARACTER_MAXIMUM_LENGTH", org.jooq.impl.SQLDataType.INTEGER, this, "");
 
     /**
      * The column <code>information_schema.PARAMETERS.CHARACTER_OCTET_LENGTH</code>.
      */
-    public final TableField<ParametersRecord, Integer> CHARACTER_OCTET_LENGTH = createField("CHARACTER_OCTET_LENGTH", org.jooq.impl.SQLDataType.INTEGER.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.INTEGER)), this, "");
+    public final TableField<ParametersRecord, Integer> CHARACTER_OCTET_LENGTH = createField("CHARACTER_OCTET_LENGTH", org.jooq.impl.SQLDataType.INTEGER, this, "");
 
     /**
      * The column <code>information_schema.PARAMETERS.NUMERIC_PRECISION</code>.
      */
-    public final TableField<ParametersRecord, Integer> NUMERIC_PRECISION = createField("NUMERIC_PRECISION", org.jooq.impl.SQLDataType.INTEGER.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.INTEGER)), this, "");
+    public final TableField<ParametersRecord, ULong> NUMERIC_PRECISION = createField("NUMERIC_PRECISION", org.jooq.impl.SQLDataType.BIGINTUNSIGNED, this, "");
 
     /**
      * The column <code>information_schema.PARAMETERS.NUMERIC_SCALE</code>.
      */
-    public final TableField<ParametersRecord, Integer> NUMERIC_SCALE = createField("NUMERIC_SCALE", org.jooq.impl.SQLDataType.INTEGER.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.INTEGER)), this, "");
+    public final TableField<ParametersRecord, Integer> NUMERIC_SCALE = createField("NUMERIC_SCALE", org.jooq.impl.SQLDataType.INTEGER, this, "");
 
     /**
      * The column <code>information_schema.PARAMETERS.DATETIME_PRECISION</code>.
      */
-    public final TableField<ParametersRecord, ULong> DATETIME_PRECISION = createField("DATETIME_PRECISION", org.jooq.impl.SQLDataType.BIGINTUNSIGNED.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINTUNSIGNED)), this, "");
+    public final TableField<ParametersRecord, ULong> DATETIME_PRECISION = createField("DATETIME_PRECISION", org.jooq.impl.SQLDataType.BIGINTUNSIGNED, this, "");
 
     /**
      * The column <code>information_schema.PARAMETERS.CHARACTER_SET_NAME</code>.
      */
-    public final TableField<ParametersRecord, String> CHARACTER_SET_NAME = createField("CHARACTER_SET_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<ParametersRecord, String> CHARACTER_SET_NAME = createField("CHARACTER_SET_NAME", org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * The column <code>information_schema.PARAMETERS.COLLATION_NAME</code>.
      */
-    public final TableField<ParametersRecord, String> COLLATION_NAME = createField("COLLATION_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<ParametersRecord, String> COLLATION_NAME = createField("COLLATION_NAME", org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * The column <code>information_schema.PARAMETERS.DTD_IDENTIFIER</code>.
      */
-    public final TableField<ParametersRecord, String> DTD_IDENTIFIER = createField("DTD_IDENTIFIER", org.jooq.impl.SQLDataType.CLOB.nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.CLOB)), this, "");
+    public final TableField<ParametersRecord, String> DTD_IDENTIFIER = createField("DTD_IDENTIFIER", org.jooq.impl.SQLDataType.CLOB.nullable(false), this, "");
 
     /**
      * The column <code>information_schema.PARAMETERS.ROUTINE_TYPE</code>.
      */
-    public final TableField<ParametersRecord, String> ROUTINE_TYPE = createField("ROUTINE_TYPE", org.jooq.impl.SQLDataType.VARCHAR(9).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<ParametersRecord, String> ROUTINE_TYPE = createField("ROUTINE_TYPE", org.jooq.impl.SQLDataType.VARCHAR(9).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * Create a <code>information_schema.PARAMETERS</code> table reference

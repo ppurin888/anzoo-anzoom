@@ -31,7 +31,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Engines extends TableImpl<EnginesRecord> {
 
-    private static final long serialVersionUID = -1991168300;
+    private static final long serialVersionUID = 2117932827;
 
     /**
      * The reference instance of <code>information_schema.ENGINES</code>
@@ -49,32 +49,32 @@ public class Engines extends TableImpl<EnginesRecord> {
     /**
      * The column <code>information_schema.ENGINES.ENGINE</code>.
      */
-    public final TableField<EnginesRecord, String> ENGINE = createField("ENGINE", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EnginesRecord, String> ENGINE = createField("ENGINE", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.ENGINES.SUPPORT</code>.
      */
-    public final TableField<EnginesRecord, String> SUPPORT = createField("SUPPORT", org.jooq.impl.SQLDataType.VARCHAR(8).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EnginesRecord, String> SUPPORT = createField("SUPPORT", org.jooq.impl.SQLDataType.VARCHAR(8).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.ENGINES.COMMENT</code>.
      */
-    public final TableField<EnginesRecord, String> COMMENT = createField("COMMENT", org.jooq.impl.SQLDataType.VARCHAR(160).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EnginesRecord, String> COMMENT = createField("COMMENT", org.jooq.impl.SQLDataType.VARCHAR(80).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.ENGINES.TRANSACTIONS</code>.
      */
-    public final TableField<EnginesRecord, String> TRANSACTIONS = createField("TRANSACTIONS", org.jooq.impl.SQLDataType.VARCHAR(3).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EnginesRecord, String> TRANSACTIONS = createField("TRANSACTIONS", org.jooq.impl.SQLDataType.VARCHAR(3), this, "");
 
     /**
      * The column <code>information_schema.ENGINES.XA</code>.
      */
-    public final TableField<EnginesRecord, String> XA = createField("XA", org.jooq.impl.SQLDataType.VARCHAR(3).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EnginesRecord, String> XA = createField("XA", org.jooq.impl.SQLDataType.VARCHAR(3), this, "");
 
     /**
      * The column <code>information_schema.ENGINES.SAVEPOINTS</code>.
      */
-    public final TableField<EnginesRecord, String> SAVEPOINTS = createField("SAVEPOINTS", org.jooq.impl.SQLDataType.VARCHAR(3).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<EnginesRecord, String> SAVEPOINTS = createField("SAVEPOINTS", org.jooq.impl.SQLDataType.VARCHAR(3), this, "");
 
     /**
      * Create a <code>information_schema.ENGINES</code> table reference

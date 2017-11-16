@@ -24,7 +24,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Columns implements Serializable {
 
-    private static final long serialVersionUID = -205231595;
+    private static final long serialVersionUID = 87492424;
 
     private String tableCatalog;
     private String tableSchema;
@@ -46,7 +46,6 @@ public class Columns implements Serializable {
     private String extra;
     private String privileges;
     private String columnComment;
-    private String isGenerated;
     private String generationExpression;
 
     public Columns() {}
@@ -72,7 +71,6 @@ public class Columns implements Serializable {
         this.extra = value.extra;
         this.privileges = value.privileges;
         this.columnComment = value.columnComment;
-        this.isGenerated = value.isGenerated;
         this.generationExpression = value.generationExpression;
     }
 
@@ -97,7 +95,6 @@ public class Columns implements Serializable {
         String extra,
         String privileges,
         String columnComment,
-        String isGenerated,
         String generationExpression
     ) {
         this.tableCatalog = tableCatalog;
@@ -120,7 +117,6 @@ public class Columns implements Serializable {
         this.extra = extra;
         this.privileges = privileges;
         this.columnComment = columnComment;
-        this.isGenerated = isGenerated;
         this.generationExpression = generationExpression;
     }
 
@@ -284,14 +280,6 @@ public class Columns implements Serializable {
         this.columnComment = columnComment;
     }
 
-    public String getIsGenerated() {
-        return this.isGenerated;
-    }
-
-    public void setIsGenerated(String isGenerated) {
-        this.isGenerated = isGenerated;
-    }
-
     public String getGenerationExpression() {
         return this.generationExpression;
     }
@@ -324,7 +312,6 @@ public class Columns implements Serializable {
         sb.append(", ").append(extra);
         sb.append(", ").append(privileges);
         sb.append(", ").append(columnComment);
-        sb.append(", ").append(isGenerated);
         sb.append(", ").append(generationExpression);
 
         sb.append(")");

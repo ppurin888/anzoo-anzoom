@@ -31,7 +31,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbFtConfig extends TableImpl<InnodbFtConfigRecord> {
 
-    private static final long serialVersionUID = -1494227174;
+    private static final long serialVersionUID = 1997404762;
 
     /**
      * The reference instance of <code>information_schema.INNODB_FT_CONFIG</code>
@@ -49,12 +49,12 @@ public class InnodbFtConfig extends TableImpl<InnodbFtConfigRecord> {
     /**
      * The column <code>information_schema.INNODB_FT_CONFIG.KEY</code>.
      */
-    public final TableField<InnodbFtConfigRecord, String> KEY = createField("KEY", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbFtConfigRecord, String> KEY = createField("KEY", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_FT_CONFIG.VALUE</code>.
      */
-    public final TableField<InnodbFtConfigRecord, String> VALUE = createField("VALUE", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbFtConfigRecord, String> VALUE = createField("VALUE", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * Create a <code>information_schema.INNODB_FT_CONFIG</code> table reference

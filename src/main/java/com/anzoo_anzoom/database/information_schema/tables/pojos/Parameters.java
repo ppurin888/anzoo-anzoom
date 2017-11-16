@@ -24,7 +24,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Parameters implements Serializable {
 
-    private static final long serialVersionUID = -822422646;
+    private static final long serialVersionUID = -120629750;
 
     private String  specificCatalog;
     private String  specificSchema;
@@ -35,7 +35,7 @@ public class Parameters implements Serializable {
     private String  dataType;
     private Integer characterMaximumLength;
     private Integer characterOctetLength;
-    private Integer numericPrecision;
+    private ULong   numericPrecision;
     private Integer numericScale;
     private ULong   datetimePrecision;
     private String  characterSetName;
@@ -74,7 +74,7 @@ public class Parameters implements Serializable {
         String  dataType,
         Integer characterMaximumLength,
         Integer characterOctetLength,
-        Integer numericPrecision,
+        ULong   numericPrecision,
         Integer numericScale,
         ULong   datetimePrecision,
         String  characterSetName,
@@ -172,11 +172,11 @@ public class Parameters implements Serializable {
         this.characterOctetLength = characterOctetLength;
     }
 
-    public Integer getNumericPrecision() {
+    public ULong getNumericPrecision() {
         return this.numericPrecision;
     }
 
-    public void setNumericPrecision(Integer numericPrecision) {
+    public void setNumericPrecision(ULong numericPrecision) {
         this.numericPrecision = numericPrecision;
     }
 

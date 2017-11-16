@@ -32,7 +32,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbFtIndexCache extends TableImpl<InnodbFtIndexCacheRecord> {
 
-    private static final long serialVersionUID = -1502860820;
+    private static final long serialVersionUID = -602499828;
 
     /**
      * The reference instance of <code>information_schema.INNODB_FT_INDEX_CACHE</code>
@@ -50,7 +50,7 @@ public class InnodbFtIndexCache extends TableImpl<InnodbFtIndexCacheRecord> {
     /**
      * The column <code>information_schema.INNODB_FT_INDEX_CACHE.WORD</code>.
      */
-    public final TableField<InnodbFtIndexCacheRecord, String> WORD = createField("WORD", org.jooq.impl.SQLDataType.VARCHAR(337).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbFtIndexCacheRecord, String> WORD = createField("WORD", org.jooq.impl.SQLDataType.VARCHAR(337).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_FT_INDEX_CACHE.FIRST_DOC_ID</code>.

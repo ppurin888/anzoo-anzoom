@@ -2,6 +2,8 @@ package com.anzoo_anzoom.presenters;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.nio.charset.StandardCharsets;
+
 public class SignUpPresenter {
 
     private final String authId;
@@ -17,7 +19,7 @@ public class SignUpPresenter {
                            @JsonProperty(value = "phone_number") String phoneNumber) {
         this.authId = authId;
         this.fullName = fullName;
-        this.password = password;
+        this.password = new String(password.getBytes(), StandardCharsets.UTF_8);
         this.email = email;
         this.phoneNumber = phoneNumber;
     }

@@ -32,7 +32,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbSysIndexes extends TableImpl<InnodbSysIndexesRecord> {
 
-    private static final long serialVersionUID = -1557986672;
+    private static final long serialVersionUID = -1977244624;
 
     /**
      * The reference instance of <code>information_schema.INNODB_SYS_INDEXES</code>
@@ -55,7 +55,7 @@ public class InnodbSysIndexes extends TableImpl<InnodbSysIndexesRecord> {
     /**
      * The column <code>information_schema.INNODB_SYS_INDEXES.NAME</code>.
      */
-    public final TableField<InnodbSysIndexesRecord, String> NAME = createField("NAME", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbSysIndexesRecord, String> NAME = createField("NAME", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_SYS_INDEXES.TABLE_ID</code>.

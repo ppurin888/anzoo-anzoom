@@ -32,7 +32,7 @@ import org.jooq.types.UInteger;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbSysForeignCols extends TableImpl<InnodbSysForeignColsRecord> {
 
-    private static final long serialVersionUID = -500099604;
+    private static final long serialVersionUID = -717902708;
 
     /**
      * The reference instance of <code>information_schema.INNODB_SYS_FOREIGN_COLS</code>
@@ -50,17 +50,17 @@ public class InnodbSysForeignCols extends TableImpl<InnodbSysForeignColsRecord> 
     /**
      * The column <code>information_schema.INNODB_SYS_FOREIGN_COLS.ID</code>.
      */
-    public final TableField<InnodbSysForeignColsRecord, String> ID = createField("ID", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbSysForeignColsRecord, String> ID = createField("ID", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_SYS_FOREIGN_COLS.FOR_COL_NAME</code>.
      */
-    public final TableField<InnodbSysForeignColsRecord, String> FOR_COL_NAME = createField("FOR_COL_NAME", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbSysForeignColsRecord, String> FOR_COL_NAME = createField("FOR_COL_NAME", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_SYS_FOREIGN_COLS.REF_COL_NAME</code>.
      */
-    public final TableField<InnodbSysForeignColsRecord, String> REF_COL_NAME = createField("REF_COL_NAME", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbSysForeignColsRecord, String> REF_COL_NAME = createField("REF_COL_NAME", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_SYS_FOREIGN_COLS.POS</code>.

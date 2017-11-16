@@ -22,7 +22,7 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Views implements Serializable {
 
-    private static final long serialVersionUID = -592974452;
+    private static final long serialVersionUID = -1590529623;
 
     private String tableCatalog;
     private String tableSchema;
@@ -34,7 +34,6 @@ public class Views implements Serializable {
     private String securityType;
     private String characterSetClient;
     private String collationConnection;
-    private String algorithm;
 
     public Views() {}
 
@@ -49,7 +48,6 @@ public class Views implements Serializable {
         this.securityType = value.securityType;
         this.characterSetClient = value.characterSetClient;
         this.collationConnection = value.collationConnection;
-        this.algorithm = value.algorithm;
     }
 
     public Views(
@@ -62,8 +60,7 @@ public class Views implements Serializable {
         String definer,
         String securityType,
         String characterSetClient,
-        String collationConnection,
-        String algorithm
+        String collationConnection
     ) {
         this.tableCatalog = tableCatalog;
         this.tableSchema = tableSchema;
@@ -75,7 +72,6 @@ public class Views implements Serializable {
         this.securityType = securityType;
         this.characterSetClient = characterSetClient;
         this.collationConnection = collationConnection;
-        this.algorithm = algorithm;
     }
 
     public String getTableCatalog() {
@@ -158,14 +154,6 @@ public class Views implements Serializable {
         this.collationConnection = collationConnection;
     }
 
-    public String getAlgorithm() {
-        return this.algorithm;
-    }
-
-    public void setAlgorithm(String algorithm) {
-        this.algorithm = algorithm;
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Views (");
@@ -180,7 +168,6 @@ public class Views implements Serializable {
         sb.append(", ").append(securityType);
         sb.append(", ").append(characterSetClient);
         sb.append(", ").append(collationConnection);
-        sb.append(", ").append(algorithm);
 
         sb.append(")");
         return sb.toString();

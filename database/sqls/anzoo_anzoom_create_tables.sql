@@ -1,8 +1,8 @@
--- MySQL dump 10.16  Distrib 10.2.9-MariaDB, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
 --
--- Host: 127.0.0.1    Database: anzoo_anzoom
+-- Host: 127.0.0.1    Database: 
 -- ------------------------------------------------------
--- Server version	10.2.9-MariaDB-10.2.9+maria~xenial-log
+-- Server version	5.7.20-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,6 +16,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Current Database: `anzoo_anzoom`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `anzoo_anzoom` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `anzoo_anzoom`;
+
+--
 -- Table structure for table `anju_tags`
 --
 
@@ -25,7 +33,7 @@ DROP TABLE IF EXISTS `anju_tags`;
 CREATE TABLE `anju_tags` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tag` varchar(256) CHARACTER SET utf8 NOT NULL,
-  `tag_count` int(11) NOT NULL DEFAULT 0,
+  `tag_count` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `anju_tags_tag_uindex` (`tag`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -52,7 +60,7 @@ CREATE TABLE `authentication_access_tokens` (
   `user_id` int(11) NOT NULL,
   `access_token` varchar(512) CHARACTER SET utf8 NOT NULL,
   `expired_at` datetime NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `authentication_access_tokens_auth_id_access_token_uindex` (`user_id`,`access_token`),
@@ -81,7 +89,7 @@ CREATE TABLE `comments` (
   `user_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL,
   `content` text CHARACTER SET utf8 NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -112,13 +120,13 @@ CREATE TABLE `posts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `photo_url` varchar(1024) CHARACTER SET utf8 NOT NULL,
-  `content` text CHARACTER SET utf8 DEFAULT NULL,
-  `beer_score` int(1) NOT NULL DEFAULT 0,
-  `soju_score` int(1) NOT NULL DEFAULT 0,
-  `traditional_alcoholic_drinks_score` int(1) NOT NULL DEFAULT 0,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `updated_at` datetime DEFAULT current_timestamp(),
-  `deleted_at` datetime DEFAULT current_timestamp(),
+  `content` text CHARACTER SET utf8,
+  `beer_score` int(1) NOT NULL DEFAULT '0',
+  `soju_score` int(1) NOT NULL DEFAULT '0',
+  `traditional_alcoholic_drinks_score` int(1) NOT NULL DEFAULT '0',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `deleted_at` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `posts_users_id_fk` (`user_id`),
   CONSTRAINT `posts_users_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE
@@ -144,7 +152,7 @@ DROP TABLE IF EXISTS `user_contact_info_types`;
 CREATE TABLE `user_contact_info_types` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type_name` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -199,7 +207,7 @@ DROP TABLE IF EXISTS `user_contact_logs`;
 CREATE TABLE `user_contact_logs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `info_id` int(11) NOT NULL,
-  `issued_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `issued_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `subject_id` int(11) NOT NULL,
   `contacted_at` datetime DEFAULT NULL,
   `content` text CHARACTER SET utf8 NOT NULL,
@@ -231,7 +239,7 @@ DROP TABLE IF EXISTS `user_contact_subjects`;
 CREATE TABLE `user_contact_subjects` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(1024) CHARACTER SET utf8 NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -258,10 +266,11 @@ DROP TABLE IF EXISTS `user_password_encryption_types`;
 CREATE TABLE `user_password_encryption_types` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type_name` varchar(128) CHARACTER SET utf8 NOT NULL,
-  `secret_key` binary(64) NOT NULL,
-  `title` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` datetime DEFAULT current_timestamp(),
-  `deleted_at` datetime,
+  `secret_key` binary(64) DEFAULT NULL,
+  `description` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(1024) CHARACTER SET utf8 NOT NULL DEFAULT 'Unknown',
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_password_encryption_types_type_name_secret_key_uindex` (`type_name`,`secret_key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -288,7 +297,7 @@ CREATE TABLE `user_password_histories` (
   `encrypted_password` binary(64) NOT NULL,
   `encryption_type_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_password_histories_users_id_fk` (`user_id`),
   KEY `user_password_histories_user_password_encryption_types_id_fk` (`encryption_type_id`),
@@ -344,4 +353,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-01 15:08:51
+-- Dump completed on 2017-11-16 16:06:52

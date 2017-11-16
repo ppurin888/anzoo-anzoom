@@ -32,7 +32,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tablespaces extends TableImpl<TablespacesRecord> {
 
-    private static final long serialVersionUID = -1524165711;
+    private static final long serialVersionUID = -1976942501;
 
     /**
      * The reference instance of <code>information_schema.TABLESPACES</code>
@@ -50,47 +50,47 @@ public class Tablespaces extends TableImpl<TablespacesRecord> {
     /**
      * The column <code>information_schema.TABLESPACES.TABLESPACE_NAME</code>.
      */
-    public final TableField<TablespacesRecord, String> TABLESPACE_NAME = createField("TABLESPACE_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<TablespacesRecord, String> TABLESPACE_NAME = createField("TABLESPACE_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.TABLESPACES.ENGINE</code>.
      */
-    public final TableField<TablespacesRecord, String> ENGINE = createField("ENGINE", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<TablespacesRecord, String> ENGINE = createField("ENGINE", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.TABLESPACES.TABLESPACE_TYPE</code>.
      */
-    public final TableField<TablespacesRecord, String> TABLESPACE_TYPE = createField("TABLESPACE_TYPE", org.jooq.impl.SQLDataType.VARCHAR(64).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<TablespacesRecord, String> TABLESPACE_TYPE = createField("TABLESPACE_TYPE", org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * The column <code>information_schema.TABLESPACES.LOGFILE_GROUP_NAME</code>.
      */
-    public final TableField<TablespacesRecord, String> LOGFILE_GROUP_NAME = createField("LOGFILE_GROUP_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<TablespacesRecord, String> LOGFILE_GROUP_NAME = createField("LOGFILE_GROUP_NAME", org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * The column <code>information_schema.TABLESPACES.EXTENT_SIZE</code>.
      */
-    public final TableField<TablespacesRecord, ULong> EXTENT_SIZE = createField("EXTENT_SIZE", org.jooq.impl.SQLDataType.BIGINTUNSIGNED.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINTUNSIGNED)), this, "");
+    public final TableField<TablespacesRecord, ULong> EXTENT_SIZE = createField("EXTENT_SIZE", org.jooq.impl.SQLDataType.BIGINTUNSIGNED, this, "");
 
     /**
      * The column <code>information_schema.TABLESPACES.AUTOEXTEND_SIZE</code>.
      */
-    public final TableField<TablespacesRecord, ULong> AUTOEXTEND_SIZE = createField("AUTOEXTEND_SIZE", org.jooq.impl.SQLDataType.BIGINTUNSIGNED.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINTUNSIGNED)), this, "");
+    public final TableField<TablespacesRecord, ULong> AUTOEXTEND_SIZE = createField("AUTOEXTEND_SIZE", org.jooq.impl.SQLDataType.BIGINTUNSIGNED, this, "");
 
     /**
      * The column <code>information_schema.TABLESPACES.MAXIMUM_SIZE</code>.
      */
-    public final TableField<TablespacesRecord, ULong> MAXIMUM_SIZE = createField("MAXIMUM_SIZE", org.jooq.impl.SQLDataType.BIGINTUNSIGNED.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINTUNSIGNED)), this, "");
+    public final TableField<TablespacesRecord, ULong> MAXIMUM_SIZE = createField("MAXIMUM_SIZE", org.jooq.impl.SQLDataType.BIGINTUNSIGNED, this, "");
 
     /**
      * The column <code>information_schema.TABLESPACES.NODEGROUP_ID</code>.
      */
-    public final TableField<TablespacesRecord, ULong> NODEGROUP_ID = createField("NODEGROUP_ID", org.jooq.impl.SQLDataType.BIGINTUNSIGNED.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINTUNSIGNED)), this, "");
+    public final TableField<TablespacesRecord, ULong> NODEGROUP_ID = createField("NODEGROUP_ID", org.jooq.impl.SQLDataType.BIGINTUNSIGNED, this, "");
 
     /**
      * The column <code>information_schema.TABLESPACES.TABLESPACE_COMMENT</code>.
      */
-    public final TableField<TablespacesRecord, String> TABLESPACE_COMMENT = createField("TABLESPACE_COMMENT", org.jooq.impl.SQLDataType.VARCHAR(2048).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<TablespacesRecord, String> TABLESPACE_COMMENT = createField("TABLESPACE_COMMENT", org.jooq.impl.SQLDataType.VARCHAR(2048), this, "");
 
     /**
      * Create a <code>information_schema.TABLESPACES</code> table reference

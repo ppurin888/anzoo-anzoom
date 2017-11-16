@@ -27,7 +27,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class RoutinesRecord extends TableRecordImpl<RoutinesRecord> {
 
-    private static final long serialVersionUID = -1663879290;
+    private static final long serialVersionUID = 633294098;
 
     /**
      * Setter for <code>information_schema.ROUTINES.SPECIFIC_NAME</code>.
@@ -144,15 +144,15 @@ public class RoutinesRecord extends TableRecordImpl<RoutinesRecord> {
     /**
      * Setter for <code>information_schema.ROUTINES.NUMERIC_PRECISION</code>.
      */
-    public void setNumericPrecision(Integer value) {
+    public void setNumericPrecision(ULong value) {
         set(8, value);
     }
 
     /**
      * Getter for <code>information_schema.ROUTINES.NUMERIC_PRECISION</code>.
      */
-    public Integer getNumericPrecision() {
-        return (Integer) get(8);
+    public ULong getNumericPrecision() {
+        return (ULong) get(8);
     }
 
     /**
@@ -477,7 +477,7 @@ public class RoutinesRecord extends TableRecordImpl<RoutinesRecord> {
     /**
      * Create a detached, initialised RoutinesRecord
      */
-    public RoutinesRecord(String specificName, String routineCatalog, String routineSchema, String routineName, String routineType, String dataType, Integer characterMaximumLength, Integer characterOctetLength, Integer numericPrecision, Integer numericScale, ULong datetimePrecision, String characterSetName, String collationName, String dtdIdentifier, String routineBody, String routineDefinition, String externalName, String externalLanguage, String parameterStyle, String isDeterministic, String sqlDataAccess, String sqlPath, String securityType, Timestamp created, Timestamp lastAltered, String sqlMode, String routineComment, String definer, String characterSetClient, String collationConnection, String databaseCollation) {
+    public RoutinesRecord(String specificName, String routineCatalog, String routineSchema, String routineName, String routineType, String dataType, Integer characterMaximumLength, Integer characterOctetLength, ULong numericPrecision, Integer numericScale, ULong datetimePrecision, String characterSetName, String collationName, String dtdIdentifier, String routineBody, String routineDefinition, String externalName, String externalLanguage, String parameterStyle, String isDeterministic, String sqlDataAccess, String sqlPath, String securityType, Timestamp created, Timestamp lastAltered, String sqlMode, String routineComment, String definer, String characterSetClient, String collationConnection, String databaseCollation) {
         super(Routines.ROUTINES);
 
         set(0, specificName);

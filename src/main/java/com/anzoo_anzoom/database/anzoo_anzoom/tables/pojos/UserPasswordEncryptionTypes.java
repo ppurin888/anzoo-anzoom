@@ -23,12 +23,13 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class UserPasswordEncryptionTypes implements Serializable {
 
-    private static final long serialVersionUID = -871664655;
+    private static final long serialVersionUID = -1487541200;
 
     private Integer   id;
     private String    typeName;
     private byte[]    secretKey;
-    private String    title;
+    private String    description;
+    private String    url;
     private Timestamp createdAt;
     private Timestamp deletedAt;
 
@@ -38,7 +39,8 @@ public class UserPasswordEncryptionTypes implements Serializable {
         this.id = value.id;
         this.typeName = value.typeName;
         this.secretKey = value.secretKey;
-        this.title = value.title;
+        this.description = value.description;
+        this.url = value.url;
         this.createdAt = value.createdAt;
         this.deletedAt = value.deletedAt;
     }
@@ -47,14 +49,16 @@ public class UserPasswordEncryptionTypes implements Serializable {
         Integer   id,
         String    typeName,
         byte[]    secretKey,
-        String    title,
+        String    description,
+        String    url,
         Timestamp createdAt,
         Timestamp deletedAt
     ) {
         this.id = id;
         this.typeName = typeName;
         this.secretKey = secretKey;
-        this.title = title;
+        this.description = description;
+        this.url = url;
         this.createdAt = createdAt;
         this.deletedAt = deletedAt;
     }
@@ -83,12 +87,20 @@ public class UserPasswordEncryptionTypes implements Serializable {
         this.secretKey = secretKey;
     }
 
-    public String getTitle() {
-        return this.title;
+    public String getDescription() {
+        return this.description;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getUrl() {
+        return this.url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public Timestamp getCreatedAt() {
@@ -114,7 +126,8 @@ public class UserPasswordEncryptionTypes implements Serializable {
         sb.append(id);
         sb.append(", ").append(typeName);
         sb.append(", ").append("[binary...]");
-        sb.append(", ").append(title);
+        sb.append(", ").append(description);
+        sb.append(", ").append(url);
         sb.append(", ").append(createdAt);
         sb.append(", ").append(deletedAt);
 

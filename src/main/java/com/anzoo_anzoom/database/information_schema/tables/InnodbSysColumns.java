@@ -32,7 +32,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbSysColumns extends TableImpl<InnodbSysColumnsRecord> {
 
-    private static final long serialVersionUID = -836099155;
+    private static final long serialVersionUID = -1428058483;
 
     /**
      * The reference instance of <code>information_schema.INNODB_SYS_COLUMNS</code>
@@ -55,7 +55,7 @@ public class InnodbSysColumns extends TableImpl<InnodbSysColumnsRecord> {
     /**
      * The column <code>information_schema.INNODB_SYS_COLUMNS.NAME</code>.
      */
-    public final TableField<InnodbSysColumnsRecord, String> NAME = createField("NAME", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbSysColumnsRecord, String> NAME = createField("NAME", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_SYS_COLUMNS.POS</code>.

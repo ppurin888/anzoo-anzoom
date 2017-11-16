@@ -5,9 +5,10 @@ package com.anzoo_anzoom.database.information_schema.tables.pojos;
 
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 import javax.annotation.Generated;
+
+import org.jooq.types.ULong;
 
 
 /**
@@ -23,25 +24,16 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Processlist implements Serializable {
 
-    private static final long serialVersionUID = 1566961134;
+    private static final long serialVersionUID = -1618024543;
 
-    private Long       id;
-    private String     user;
-    private String     host;
-    private String     db;
-    private String     command;
-    private Integer    time;
-    private String     state;
-    private String     info;
-    private BigDecimal timeMs;
-    private Byte       stage;
-    private Byte       maxStage;
-    private BigDecimal progress;
-    private Long       memoryUsed;
-    private Integer    examinedRows;
-    private Long       queryId;
-    private byte[]     infoBinary;
-    private Long       tid;
+    private ULong   id;
+    private String  user;
+    private String  host;
+    private String  db;
+    private String  command;
+    private Integer time;
+    private String  state;
+    private String  info;
 
     public Processlist() {}
 
@@ -54,35 +46,17 @@ public class Processlist implements Serializable {
         this.time = value.time;
         this.state = value.state;
         this.info = value.info;
-        this.timeMs = value.timeMs;
-        this.stage = value.stage;
-        this.maxStage = value.maxStage;
-        this.progress = value.progress;
-        this.memoryUsed = value.memoryUsed;
-        this.examinedRows = value.examinedRows;
-        this.queryId = value.queryId;
-        this.infoBinary = value.infoBinary;
-        this.tid = value.tid;
     }
 
     public Processlist(
-        Long       id,
-        String     user,
-        String     host,
-        String     db,
-        String     command,
-        Integer    time,
-        String     state,
-        String     info,
-        BigDecimal timeMs,
-        Byte       stage,
-        Byte       maxStage,
-        BigDecimal progress,
-        Long       memoryUsed,
-        Integer    examinedRows,
-        Long       queryId,
-        byte[]     infoBinary,
-        Long       tid
+        ULong   id,
+        String  user,
+        String  host,
+        String  db,
+        String  command,
+        Integer time,
+        String  state,
+        String  info
     ) {
         this.id = id;
         this.user = user;
@@ -92,22 +66,13 @@ public class Processlist implements Serializable {
         this.time = time;
         this.state = state;
         this.info = info;
-        this.timeMs = timeMs;
-        this.stage = stage;
-        this.maxStage = maxStage;
-        this.progress = progress;
-        this.memoryUsed = memoryUsed;
-        this.examinedRows = examinedRows;
-        this.queryId = queryId;
-        this.infoBinary = infoBinary;
-        this.tid = tid;
     }
 
-    public Long getId() {
+    public ULong getId() {
         return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(ULong id) {
         this.id = id;
     }
 
@@ -167,78 +132,6 @@ public class Processlist implements Serializable {
         this.info = info;
     }
 
-    public BigDecimal getTimeMs() {
-        return this.timeMs;
-    }
-
-    public void setTimeMs(BigDecimal timeMs) {
-        this.timeMs = timeMs;
-    }
-
-    public Byte getStage() {
-        return this.stage;
-    }
-
-    public void setStage(Byte stage) {
-        this.stage = stage;
-    }
-
-    public Byte getMaxStage() {
-        return this.maxStage;
-    }
-
-    public void setMaxStage(Byte maxStage) {
-        this.maxStage = maxStage;
-    }
-
-    public BigDecimal getProgress() {
-        return this.progress;
-    }
-
-    public void setProgress(BigDecimal progress) {
-        this.progress = progress;
-    }
-
-    public Long getMemoryUsed() {
-        return this.memoryUsed;
-    }
-
-    public void setMemoryUsed(Long memoryUsed) {
-        this.memoryUsed = memoryUsed;
-    }
-
-    public Integer getExaminedRows() {
-        return this.examinedRows;
-    }
-
-    public void setExaminedRows(Integer examinedRows) {
-        this.examinedRows = examinedRows;
-    }
-
-    public Long getQueryId() {
-        return this.queryId;
-    }
-
-    public void setQueryId(Long queryId) {
-        this.queryId = queryId;
-    }
-
-    public byte[] getInfoBinary() {
-        return this.infoBinary;
-    }
-
-    public void setInfoBinary(byte... infoBinary) {
-        this.infoBinary = infoBinary;
-    }
-
-    public Long getTid() {
-        return this.tid;
-    }
-
-    public void setTid(Long tid) {
-        this.tid = tid;
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Processlist (");
@@ -251,15 +144,6 @@ public class Processlist implements Serializable {
         sb.append(", ").append(time);
         sb.append(", ").append(state);
         sb.append(", ").append(info);
-        sb.append(", ").append(timeMs);
-        sb.append(", ").append(stage);
-        sb.append(", ").append(maxStage);
-        sb.append(", ").append(progress);
-        sb.append(", ").append(memoryUsed);
-        sb.append(", ").append(examinedRows);
-        sb.append(", ").append(queryId);
-        sb.append(", ").append("[binary...]");
-        sb.append(", ").append(tid);
 
         sb.append(")");
         return sb.toString();

@@ -31,7 +31,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Plugins extends TableImpl<PluginsRecord> {
 
-    private static final long serialVersionUID = 1857711703;
+    private static final long serialVersionUID = 1186714595;
 
     /**
      * The reference instance of <code>information_schema.PLUGINS</code>
@@ -49,67 +49,57 @@ public class Plugins extends TableImpl<PluginsRecord> {
     /**
      * The column <code>information_schema.PLUGINS.PLUGIN_NAME</code>.
      */
-    public final TableField<PluginsRecord, String> PLUGIN_NAME = createField("PLUGIN_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PluginsRecord, String> PLUGIN_NAME = createField("PLUGIN_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PLUGINS.PLUGIN_VERSION</code>.
      */
-    public final TableField<PluginsRecord, String> PLUGIN_VERSION = createField("PLUGIN_VERSION", org.jooq.impl.SQLDataType.VARCHAR(20).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PluginsRecord, String> PLUGIN_VERSION = createField("PLUGIN_VERSION", org.jooq.impl.SQLDataType.VARCHAR(20).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PLUGINS.PLUGIN_STATUS</code>.
      */
-    public final TableField<PluginsRecord, String> PLUGIN_STATUS = createField("PLUGIN_STATUS", org.jooq.impl.SQLDataType.VARCHAR(16).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PluginsRecord, String> PLUGIN_STATUS = createField("PLUGIN_STATUS", org.jooq.impl.SQLDataType.VARCHAR(10).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PLUGINS.PLUGIN_TYPE</code>.
      */
-    public final TableField<PluginsRecord, String> PLUGIN_TYPE = createField("PLUGIN_TYPE", org.jooq.impl.SQLDataType.VARCHAR(80).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PluginsRecord, String> PLUGIN_TYPE = createField("PLUGIN_TYPE", org.jooq.impl.SQLDataType.VARCHAR(80).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PLUGINS.PLUGIN_TYPE_VERSION</code>.
      */
-    public final TableField<PluginsRecord, String> PLUGIN_TYPE_VERSION = createField("PLUGIN_TYPE_VERSION", org.jooq.impl.SQLDataType.VARCHAR(20).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PluginsRecord, String> PLUGIN_TYPE_VERSION = createField("PLUGIN_TYPE_VERSION", org.jooq.impl.SQLDataType.VARCHAR(20).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PLUGINS.PLUGIN_LIBRARY</code>.
      */
-    public final TableField<PluginsRecord, String> PLUGIN_LIBRARY = createField("PLUGIN_LIBRARY", org.jooq.impl.SQLDataType.VARCHAR(64).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PluginsRecord, String> PLUGIN_LIBRARY = createField("PLUGIN_LIBRARY", org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * The column <code>information_schema.PLUGINS.PLUGIN_LIBRARY_VERSION</code>.
      */
-    public final TableField<PluginsRecord, String> PLUGIN_LIBRARY_VERSION = createField("PLUGIN_LIBRARY_VERSION", org.jooq.impl.SQLDataType.VARCHAR(20).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PluginsRecord, String> PLUGIN_LIBRARY_VERSION = createField("PLUGIN_LIBRARY_VERSION", org.jooq.impl.SQLDataType.VARCHAR(20), this, "");
 
     /**
      * The column <code>information_schema.PLUGINS.PLUGIN_AUTHOR</code>.
      */
-    public final TableField<PluginsRecord, String> PLUGIN_AUTHOR = createField("PLUGIN_AUTHOR", org.jooq.impl.SQLDataType.VARCHAR(64).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PluginsRecord, String> PLUGIN_AUTHOR = createField("PLUGIN_AUTHOR", org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * The column <code>information_schema.PLUGINS.PLUGIN_DESCRIPTION</code>.
      */
-    public final TableField<PluginsRecord, String> PLUGIN_DESCRIPTION = createField("PLUGIN_DESCRIPTION", org.jooq.impl.SQLDataType.CLOB.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.CLOB)), this, "");
+    public final TableField<PluginsRecord, String> PLUGIN_DESCRIPTION = createField("PLUGIN_DESCRIPTION", org.jooq.impl.SQLDataType.CLOB, this, "");
 
     /**
      * The column <code>information_schema.PLUGINS.PLUGIN_LICENSE</code>.
      */
-    public final TableField<PluginsRecord, String> PLUGIN_LICENSE = createField("PLUGIN_LICENSE", org.jooq.impl.SQLDataType.VARCHAR(80).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PluginsRecord, String> PLUGIN_LICENSE = createField("PLUGIN_LICENSE", org.jooq.impl.SQLDataType.VARCHAR(80), this, "");
 
     /**
      * The column <code>information_schema.PLUGINS.LOAD_OPTION</code>.
      */
-    public final TableField<PluginsRecord, String> LOAD_OPTION = createField("LOAD_OPTION", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
-
-    /**
-     * The column <code>information_schema.PLUGINS.PLUGIN_MATURITY</code>.
-     */
-    public final TableField<PluginsRecord, String> PLUGIN_MATURITY = createField("PLUGIN_MATURITY", org.jooq.impl.SQLDataType.VARCHAR(12).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
-
-    /**
-     * The column <code>information_schema.PLUGINS.PLUGIN_AUTH_VERSION</code>.
-     */
-    public final TableField<PluginsRecord, String> PLUGIN_AUTH_VERSION = createField("PLUGIN_AUTH_VERSION", org.jooq.impl.SQLDataType.VARCHAR(80).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<PluginsRecord, String> LOAD_OPTION = createField("LOAD_OPTION", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * Create a <code>information_schema.PLUGINS</code> table reference

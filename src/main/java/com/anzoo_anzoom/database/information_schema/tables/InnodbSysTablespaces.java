@@ -33,7 +33,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbSysTablespaces extends TableImpl<InnodbSysTablespacesRecord> {
 
-    private static final long serialVersionUID = 498478854;
+    private static final long serialVersionUID = 2000787302;
 
     /**
      * The reference instance of <code>information_schema.INNODB_SYS_TABLESPACES</code>
@@ -56,7 +56,7 @@ public class InnodbSysTablespaces extends TableImpl<InnodbSysTablespacesRecord> 
     /**
      * The column <code>information_schema.INNODB_SYS_TABLESPACES.NAME</code>.
      */
-    public final TableField<InnodbSysTablespacesRecord, String> NAME = createField("NAME", org.jooq.impl.SQLDataType.VARCHAR(655).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbSysTablespacesRecord, String> NAME = createField("NAME", org.jooq.impl.SQLDataType.VARCHAR(655).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_SYS_TABLESPACES.FLAG</code>.
@@ -66,12 +66,12 @@ public class InnodbSysTablespaces extends TableImpl<InnodbSysTablespacesRecord> 
     /**
      * The column <code>information_schema.INNODB_SYS_TABLESPACES.FILE_FORMAT</code>.
      */
-    public final TableField<InnodbSysTablespacesRecord, String> FILE_FORMAT = createField("FILE_FORMAT", org.jooq.impl.SQLDataType.VARCHAR(10).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbSysTablespacesRecord, String> FILE_FORMAT = createField("FILE_FORMAT", org.jooq.impl.SQLDataType.VARCHAR(10), this, "");
 
     /**
      * The column <code>information_schema.INNODB_SYS_TABLESPACES.ROW_FORMAT</code>.
      */
-    public final TableField<InnodbSysTablespacesRecord, String> ROW_FORMAT = createField("ROW_FORMAT", org.jooq.impl.SQLDataType.VARCHAR(22).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbSysTablespacesRecord, String> ROW_FORMAT = createField("ROW_FORMAT", org.jooq.impl.SQLDataType.VARCHAR(22), this, "");
 
     /**
      * The column <code>information_schema.INNODB_SYS_TABLESPACES.PAGE_SIZE</code>.
@@ -86,7 +86,7 @@ public class InnodbSysTablespaces extends TableImpl<InnodbSysTablespacesRecord> 
     /**
      * The column <code>information_schema.INNODB_SYS_TABLESPACES.SPACE_TYPE</code>.
      */
-    public final TableField<InnodbSysTablespacesRecord, String> SPACE_TYPE = createField("SPACE_TYPE", org.jooq.impl.SQLDataType.VARCHAR(10).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbSysTablespacesRecord, String> SPACE_TYPE = createField("SPACE_TYPE", org.jooq.impl.SQLDataType.VARCHAR(10), this, "");
 
     /**
      * The column <code>information_schema.INNODB_SYS_TABLESPACES.FS_BLOCK_SIZE</code>.

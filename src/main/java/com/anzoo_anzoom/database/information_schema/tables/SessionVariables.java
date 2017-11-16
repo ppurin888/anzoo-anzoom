@@ -31,7 +31,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class SessionVariables extends TableImpl<SessionVariablesRecord> {
 
-    private static final long serialVersionUID = -619743944;
+    private static final long serialVersionUID = -66053727;
 
     /**
      * The reference instance of <code>information_schema.SESSION_VARIABLES</code>
@@ -49,12 +49,12 @@ public class SessionVariables extends TableImpl<SessionVariablesRecord> {
     /**
      * The column <code>information_schema.SESSION_VARIABLES.VARIABLE_NAME</code>.
      */
-    public final TableField<SessionVariablesRecord, String> VARIABLE_NAME = createField("VARIABLE_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<SessionVariablesRecord, String> VARIABLE_NAME = createField("VARIABLE_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.SESSION_VARIABLES.VARIABLE_VALUE</code>.
      */
-    public final TableField<SessionVariablesRecord, String> VARIABLE_VALUE = createField("VARIABLE_VALUE", org.jooq.impl.SQLDataType.VARCHAR(2048).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<SessionVariablesRecord, String> VARIABLE_VALUE = createField("VARIABLE_VALUE", org.jooq.impl.SQLDataType.VARCHAR(1024), this, "");
 
     /**
      * Create a <code>information_schema.SESSION_VARIABLES</code> table reference

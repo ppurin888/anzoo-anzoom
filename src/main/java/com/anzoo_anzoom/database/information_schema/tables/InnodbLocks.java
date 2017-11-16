@@ -32,7 +32,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbLocks extends TableImpl<InnodbLocksRecord> {
 
-    private static final long serialVersionUID = -1471787113;
+    private static final long serialVersionUID = 170549610;
 
     /**
      * The reference instance of <code>information_schema.INNODB_LOCKS</code>
@@ -50,52 +50,52 @@ public class InnodbLocks extends TableImpl<InnodbLocksRecord> {
     /**
      * The column <code>information_schema.INNODB_LOCKS.lock_id</code>.
      */
-    public final TableField<InnodbLocksRecord, String> LOCK_ID = createField("lock_id", org.jooq.impl.SQLDataType.VARCHAR(81).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbLocksRecord, String> LOCK_ID = createField("lock_id", org.jooq.impl.SQLDataType.VARCHAR(81).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_LOCKS.lock_trx_id</code>.
      */
-    public final TableField<InnodbLocksRecord, String> LOCK_TRX_ID = createField("lock_trx_id", org.jooq.impl.SQLDataType.VARCHAR(18).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbLocksRecord, String> LOCK_TRX_ID = createField("lock_trx_id", org.jooq.impl.SQLDataType.VARCHAR(18).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_LOCKS.lock_mode</code>.
      */
-    public final TableField<InnodbLocksRecord, String> LOCK_MODE = createField("lock_mode", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbLocksRecord, String> LOCK_MODE = createField("lock_mode", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_LOCKS.lock_type</code>.
      */
-    public final TableField<InnodbLocksRecord, String> LOCK_TYPE = createField("lock_type", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbLocksRecord, String> LOCK_TYPE = createField("lock_type", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_LOCKS.lock_table</code>.
      */
-    public final TableField<InnodbLocksRecord, String> LOCK_TABLE = createField("lock_table", org.jooq.impl.SQLDataType.VARCHAR(1024).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbLocksRecord, String> LOCK_TABLE = createField("lock_table", org.jooq.impl.SQLDataType.VARCHAR(1024).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_LOCKS.lock_index</code>.
      */
-    public final TableField<InnodbLocksRecord, String> LOCK_INDEX = createField("lock_index", org.jooq.impl.SQLDataType.VARCHAR(1024).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbLocksRecord, String> LOCK_INDEX = createField("lock_index", org.jooq.impl.SQLDataType.VARCHAR(1024), this, "");
 
     /**
      * The column <code>information_schema.INNODB_LOCKS.lock_space</code>.
      */
-    public final TableField<InnodbLocksRecord, ULong> LOCK_SPACE = createField("lock_space", org.jooq.impl.SQLDataType.BIGINTUNSIGNED.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINTUNSIGNED)), this, "");
+    public final TableField<InnodbLocksRecord, ULong> LOCK_SPACE = createField("lock_space", org.jooq.impl.SQLDataType.BIGINTUNSIGNED, this, "");
 
     /**
      * The column <code>information_schema.INNODB_LOCKS.lock_page</code>.
      */
-    public final TableField<InnodbLocksRecord, ULong> LOCK_PAGE = createField("lock_page", org.jooq.impl.SQLDataType.BIGINTUNSIGNED.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINTUNSIGNED)), this, "");
+    public final TableField<InnodbLocksRecord, ULong> LOCK_PAGE = createField("lock_page", org.jooq.impl.SQLDataType.BIGINTUNSIGNED, this, "");
 
     /**
      * The column <code>information_schema.INNODB_LOCKS.lock_rec</code>.
      */
-    public final TableField<InnodbLocksRecord, ULong> LOCK_REC = createField("lock_rec", org.jooq.impl.SQLDataType.BIGINTUNSIGNED.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINTUNSIGNED)), this, "");
+    public final TableField<InnodbLocksRecord, ULong> LOCK_REC = createField("lock_rec", org.jooq.impl.SQLDataType.BIGINTUNSIGNED, this, "");
 
     /**
      * The column <code>information_schema.INNODB_LOCKS.lock_data</code>.
      */
-    public final TableField<InnodbLocksRecord, String> LOCK_DATA = createField("lock_data", org.jooq.impl.SQLDataType.VARCHAR(8192).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbLocksRecord, String> LOCK_DATA = createField("lock_data", org.jooq.impl.SQLDataType.VARCHAR(8192), this, "");
 
     /**
      * Create a <code>information_schema.INNODB_LOCKS</code> table reference

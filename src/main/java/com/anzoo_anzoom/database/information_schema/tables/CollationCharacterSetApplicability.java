@@ -31,7 +31,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class CollationCharacterSetApplicability extends TableImpl<CollationCharacterSetApplicabilityRecord> {
 
-    private static final long serialVersionUID = 1709685103;
+    private static final long serialVersionUID = 2146989679;
 
     /**
      * The reference instance of <code>information_schema.COLLATION_CHARACTER_SET_APPLICABILITY</code>
@@ -49,12 +49,12 @@ public class CollationCharacterSetApplicability extends TableImpl<CollationChara
     /**
      * The column <code>information_schema.COLLATION_CHARACTER_SET_APPLICABILITY.COLLATION_NAME</code>.
      */
-    public final TableField<CollationCharacterSetApplicabilityRecord, String> COLLATION_NAME = createField("COLLATION_NAME", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<CollationCharacterSetApplicabilityRecord, String> COLLATION_NAME = createField("COLLATION_NAME", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.COLLATION_CHARACTER_SET_APPLICABILITY.CHARACTER_SET_NAME</code>.
      */
-    public final TableField<CollationCharacterSetApplicabilityRecord, String> CHARACTER_SET_NAME = createField("CHARACTER_SET_NAME", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<CollationCharacterSetApplicabilityRecord, String> CHARACTER_SET_NAME = createField("CHARACTER_SET_NAME", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * Create a <code>information_schema.COLLATION_CHARACTER_SET_APPLICABILITY</code> table reference

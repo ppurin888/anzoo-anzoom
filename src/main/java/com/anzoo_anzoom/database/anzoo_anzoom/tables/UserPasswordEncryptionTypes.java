@@ -40,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class UserPasswordEncryptionTypes extends TableImpl<UserPasswordEncryptionTypesRecord> {
 
-    private static final long serialVersionUID = 1312202252;
+    private static final long serialVersionUID = 1248145720;
 
     /**
      * The reference instance of <code>anzoo_anzoom.user_password_encryption_types</code>
@@ -68,17 +68,22 @@ public class UserPasswordEncryptionTypes extends TableImpl<UserPasswordEncryptio
     /**
      * The column <code>anzoo_anzoom.user_password_encryption_types.secret_key</code>.
      */
-    public final TableField<UserPasswordEncryptionTypesRecord, byte[]> SECRET_KEY = createField("secret_key", org.jooq.impl.SQLDataType.BINARY(64).nullable(false), this, "");
+    public final TableField<UserPasswordEncryptionTypesRecord, byte[]> SECRET_KEY = createField("secret_key", org.jooq.impl.SQLDataType.BINARY(64), this, "");
 
     /**
-     * The column <code>anzoo_anzoom.user_password_encryption_types.title</code>.
+     * The column <code>anzoo_anzoom.user_password_encryption_types.description</code>.
      */
-    public final TableField<UserPasswordEncryptionTypesRecord, String> TITLE = createField("title", org.jooq.impl.SQLDataType.VARCHAR(1024).nullable(false), this, "");
+    public final TableField<UserPasswordEncryptionTypesRecord, String> DESCRIPTION = createField("description", org.jooq.impl.SQLDataType.VARCHAR(1024).nullable(false), this, "");
+
+    /**
+     * The column <code>anzoo_anzoom.user_password_encryption_types.url</code>.
+     */
+    public final TableField<UserPasswordEncryptionTypesRecord, String> URL = createField("url", org.jooq.impl.SQLDataType.VARCHAR(1024).nullable(false).defaultValue(org.jooq.impl.DSL.inline("Unknown", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>anzoo_anzoom.user_password_encryption_types.created_at</code>.
      */
-    public final TableField<UserPasswordEncryptionTypesRecord, Timestamp> CREATED_AT = createField("created_at", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.inline("current_timestamp()", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<UserPasswordEncryptionTypesRecord, Timestamp> CREATED_AT = createField("created_at", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.inline("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
 
     /**
      * The column <code>anzoo_anzoom.user_password_encryption_types.deleted_at</code>.

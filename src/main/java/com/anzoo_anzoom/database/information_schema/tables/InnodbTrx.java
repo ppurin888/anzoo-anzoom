@@ -34,7 +34,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbTrx extends TableImpl<InnodbTrxRecord> {
 
-    private static final long serialVersionUID = -1678827723;
+    private static final long serialVersionUID = -1471797199;
 
     /**
      * The reference instance of <code>information_schema.INNODB_TRX</code>
@@ -52,27 +52,27 @@ public class InnodbTrx extends TableImpl<InnodbTrxRecord> {
     /**
      * The column <code>information_schema.INNODB_TRX.trx_id</code>.
      */
-    public final TableField<InnodbTrxRecord, String> TRX_ID = createField("trx_id", org.jooq.impl.SQLDataType.VARCHAR(18).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbTrxRecord, String> TRX_ID = createField("trx_id", org.jooq.impl.SQLDataType.VARCHAR(18).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_TRX.trx_state</code>.
      */
-    public final TableField<InnodbTrxRecord, String> TRX_STATE = createField("trx_state", org.jooq.impl.SQLDataType.VARCHAR(13).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbTrxRecord, String> TRX_STATE = createField("trx_state", org.jooq.impl.SQLDataType.VARCHAR(13).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_TRX.trx_started</code>.
      */
-    public final TableField<InnodbTrxRecord, Timestamp> TRX_STARTED = createField("trx_started", org.jooq.impl.SQLDataType.TIMESTAMP.nullable(false).defaultValue(org.jooq.impl.DSL.inline("'0000-00-00 00:00:00'", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<InnodbTrxRecord, Timestamp> TRX_STARTED = createField("trx_started", org.jooq.impl.SQLDataType.TIMESTAMP.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0000-00-00 00:00:00", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_TRX.trx_requested_lock_id</code>.
      */
-    public final TableField<InnodbTrxRecord, String> TRX_REQUESTED_LOCK_ID = createField("trx_requested_lock_id", org.jooq.impl.SQLDataType.VARCHAR(81).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbTrxRecord, String> TRX_REQUESTED_LOCK_ID = createField("trx_requested_lock_id", org.jooq.impl.SQLDataType.VARCHAR(81), this, "");
 
     /**
      * The column <code>information_schema.INNODB_TRX.trx_wait_started</code>.
      */
-    public final TableField<InnodbTrxRecord, Timestamp> TRX_WAIT_STARTED = createField("trx_wait_started", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<InnodbTrxRecord, Timestamp> TRX_WAIT_STARTED = createField("trx_wait_started", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
      * The column <code>information_schema.INNODB_TRX.trx_weight</code>.
@@ -87,12 +87,12 @@ public class InnodbTrx extends TableImpl<InnodbTrxRecord> {
     /**
      * The column <code>information_schema.INNODB_TRX.trx_query</code>.
      */
-    public final TableField<InnodbTrxRecord, String> TRX_QUERY = createField("trx_query", org.jooq.impl.SQLDataType.VARCHAR(1024).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbTrxRecord, String> TRX_QUERY = createField("trx_query", org.jooq.impl.SQLDataType.VARCHAR(1024), this, "");
 
     /**
      * The column <code>information_schema.INNODB_TRX.trx_operation_state</code>.
      */
-    public final TableField<InnodbTrxRecord, String> TRX_OPERATION_STATE = createField("trx_operation_state", org.jooq.impl.SQLDataType.VARCHAR(64).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbTrxRecord, String> TRX_OPERATION_STATE = createField("trx_operation_state", org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * The column <code>information_schema.INNODB_TRX.trx_tables_in_use</code>.
@@ -132,7 +132,7 @@ public class InnodbTrx extends TableImpl<InnodbTrxRecord> {
     /**
      * The column <code>information_schema.INNODB_TRX.trx_isolation_level</code>.
      */
-    public final TableField<InnodbTrxRecord, String> TRX_ISOLATION_LEVEL = createField("trx_isolation_level", org.jooq.impl.SQLDataType.VARCHAR(16).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbTrxRecord, String> TRX_ISOLATION_LEVEL = createField("trx_isolation_level", org.jooq.impl.SQLDataType.VARCHAR(16).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_TRX.trx_unique_checks</code>.
@@ -147,12 +147,17 @@ public class InnodbTrx extends TableImpl<InnodbTrxRecord> {
     /**
      * The column <code>information_schema.INNODB_TRX.trx_last_foreign_key_error</code>.
      */
-    public final TableField<InnodbTrxRecord, String> TRX_LAST_FOREIGN_KEY_ERROR = createField("trx_last_foreign_key_error", org.jooq.impl.SQLDataType.VARCHAR(256).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbTrxRecord, String> TRX_LAST_FOREIGN_KEY_ERROR = createField("trx_last_foreign_key_error", org.jooq.impl.SQLDataType.VARCHAR(256), this, "");
 
     /**
      * The column <code>information_schema.INNODB_TRX.trx_adaptive_hash_latched</code>.
      */
     public final TableField<InnodbTrxRecord, Integer> TRX_ADAPTIVE_HASH_LATCHED = createField("trx_adaptive_hash_latched", org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.INTEGER)), this, "");
+
+    /**
+     * The column <code>information_schema.INNODB_TRX.trx_adaptive_hash_timeout</code>.
+     */
+    public final TableField<InnodbTrxRecord, ULong> TRX_ADAPTIVE_HASH_TIMEOUT = createField("trx_adaptive_hash_timeout", org.jooq.impl.SQLDataType.BIGINTUNSIGNED.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BIGINTUNSIGNED)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_TRX.trx_is_read_only</code>.

@@ -33,7 +33,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbMetrics extends TableImpl<InnodbMetricsRecord> {
 
-    private static final long serialVersionUID = -1547235024;
+    private static final long serialVersionUID = -1192322665;
 
     /**
      * The reference instance of <code>information_schema.INNODB_METRICS</code>
@@ -51,12 +51,12 @@ public class InnodbMetrics extends TableImpl<InnodbMetricsRecord> {
     /**
      * The column <code>information_schema.INNODB_METRICS.NAME</code>.
      */
-    public final TableField<InnodbMetricsRecord, String> NAME = createField("NAME", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbMetricsRecord, String> NAME = createField("NAME", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_METRICS.SUBSYSTEM</code>.
      */
-    public final TableField<InnodbMetricsRecord, String> SUBSYSTEM = createField("SUBSYSTEM", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbMetricsRecord, String> SUBSYSTEM = createField("SUBSYSTEM", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_METRICS.COUNT</code>.
@@ -66,17 +66,17 @@ public class InnodbMetrics extends TableImpl<InnodbMetricsRecord> {
     /**
      * The column <code>information_schema.INNODB_METRICS.MAX_COUNT</code>.
      */
-    public final TableField<InnodbMetricsRecord, Long> MAX_COUNT = createField("MAX_COUNT", org.jooq.impl.SQLDataType.BIGINT.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINT)), this, "");
+    public final TableField<InnodbMetricsRecord, Long> MAX_COUNT = createField("MAX_COUNT", org.jooq.impl.SQLDataType.BIGINT, this, "");
 
     /**
      * The column <code>information_schema.INNODB_METRICS.MIN_COUNT</code>.
      */
-    public final TableField<InnodbMetricsRecord, Long> MIN_COUNT = createField("MIN_COUNT", org.jooq.impl.SQLDataType.BIGINT.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINT)), this, "");
+    public final TableField<InnodbMetricsRecord, Long> MIN_COUNT = createField("MIN_COUNT", org.jooq.impl.SQLDataType.BIGINT, this, "");
 
     /**
      * The column <code>information_schema.INNODB_METRICS.AVG_COUNT</code>.
      */
-    public final TableField<InnodbMetricsRecord, Double> AVG_COUNT = createField("AVG_COUNT", org.jooq.impl.SQLDataType.DOUBLE.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.DOUBLE)), this, "");
+    public final TableField<InnodbMetricsRecord, Double> AVG_COUNT = createField("AVG_COUNT", org.jooq.impl.SQLDataType.DOUBLE, this, "");
 
     /**
      * The column <code>information_schema.INNODB_METRICS.COUNT_RESET</code>.
@@ -86,52 +86,52 @@ public class InnodbMetrics extends TableImpl<InnodbMetricsRecord> {
     /**
      * The column <code>information_schema.INNODB_METRICS.MAX_COUNT_RESET</code>.
      */
-    public final TableField<InnodbMetricsRecord, Long> MAX_COUNT_RESET = createField("MAX_COUNT_RESET", org.jooq.impl.SQLDataType.BIGINT.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINT)), this, "");
+    public final TableField<InnodbMetricsRecord, Long> MAX_COUNT_RESET = createField("MAX_COUNT_RESET", org.jooq.impl.SQLDataType.BIGINT, this, "");
 
     /**
      * The column <code>information_schema.INNODB_METRICS.MIN_COUNT_RESET</code>.
      */
-    public final TableField<InnodbMetricsRecord, Long> MIN_COUNT_RESET = createField("MIN_COUNT_RESET", org.jooq.impl.SQLDataType.BIGINT.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINT)), this, "");
+    public final TableField<InnodbMetricsRecord, Long> MIN_COUNT_RESET = createField("MIN_COUNT_RESET", org.jooq.impl.SQLDataType.BIGINT, this, "");
 
     /**
      * The column <code>information_schema.INNODB_METRICS.AVG_COUNT_RESET</code>.
      */
-    public final TableField<InnodbMetricsRecord, Double> AVG_COUNT_RESET = createField("AVG_COUNT_RESET", org.jooq.impl.SQLDataType.DOUBLE.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.DOUBLE)), this, "");
+    public final TableField<InnodbMetricsRecord, Double> AVG_COUNT_RESET = createField("AVG_COUNT_RESET", org.jooq.impl.SQLDataType.DOUBLE, this, "");
 
     /**
      * The column <code>information_schema.INNODB_METRICS.TIME_ENABLED</code>.
      */
-    public final TableField<InnodbMetricsRecord, Timestamp> TIME_ENABLED = createField("TIME_ENABLED", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<InnodbMetricsRecord, Timestamp> TIME_ENABLED = createField("TIME_ENABLED", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
      * The column <code>information_schema.INNODB_METRICS.TIME_DISABLED</code>.
      */
-    public final TableField<InnodbMetricsRecord, Timestamp> TIME_DISABLED = createField("TIME_DISABLED", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<InnodbMetricsRecord, Timestamp> TIME_DISABLED = createField("TIME_DISABLED", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
      * The column <code>information_schema.INNODB_METRICS.TIME_ELAPSED</code>.
      */
-    public final TableField<InnodbMetricsRecord, Long> TIME_ELAPSED = createField("TIME_ELAPSED", org.jooq.impl.SQLDataType.BIGINT.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BIGINT)), this, "");
+    public final TableField<InnodbMetricsRecord, Long> TIME_ELAPSED = createField("TIME_ELAPSED", org.jooq.impl.SQLDataType.BIGINT, this, "");
 
     /**
      * The column <code>information_schema.INNODB_METRICS.TIME_RESET</code>.
      */
-    public final TableField<InnodbMetricsRecord, Timestamp> TIME_RESET = createField("TIME_RESET", org.jooq.impl.SQLDataType.TIMESTAMP.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<InnodbMetricsRecord, Timestamp> TIME_RESET = createField("TIME_RESET", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
      * The column <code>information_schema.INNODB_METRICS.STATUS</code>.
      */
-    public final TableField<InnodbMetricsRecord, String> STATUS = createField("STATUS", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbMetricsRecord, String> STATUS = createField("STATUS", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_METRICS.TYPE</code>.
      */
-    public final TableField<InnodbMetricsRecord, String> TYPE = createField("TYPE", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbMetricsRecord, String> TYPE = createField("TYPE", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_METRICS.COMMENT</code>.
      */
-    public final TableField<InnodbMetricsRecord, String> COMMENT = createField("COMMENT", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbMetricsRecord, String> COMMENT = createField("COMMENT", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * Create a <code>information_schema.INNODB_METRICS</code> table reference

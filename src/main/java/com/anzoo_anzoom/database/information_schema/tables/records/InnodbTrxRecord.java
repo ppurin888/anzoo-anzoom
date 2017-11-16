@@ -27,7 +27,7 @@ import org.jooq.types.ULong;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbTrxRecord extends TableRecordImpl<InnodbTrxRecord> {
 
-    private static final long serialVersionUID = 219829108;
+    private static final long serialVersionUID = 671430874;
 
     /**
      * Setter for <code>information_schema.INNODB_TRX.trx_id</code>.
@@ -324,31 +324,45 @@ public class InnodbTrxRecord extends TableRecordImpl<InnodbTrxRecord> {
     }
 
     /**
+     * Setter for <code>information_schema.INNODB_TRX.trx_adaptive_hash_timeout</code>.
+     */
+    public void setTrxAdaptiveHashTimeout(ULong value) {
+        set(21, value);
+    }
+
+    /**
+     * Getter for <code>information_schema.INNODB_TRX.trx_adaptive_hash_timeout</code>.
+     */
+    public ULong getTrxAdaptiveHashTimeout() {
+        return (ULong) get(21);
+    }
+
+    /**
      * Setter for <code>information_schema.INNODB_TRX.trx_is_read_only</code>.
      */
     public void setTrxIsReadOnly(Integer value) {
-        set(21, value);
+        set(22, value);
     }
 
     /**
      * Getter for <code>information_schema.INNODB_TRX.trx_is_read_only</code>.
      */
     public Integer getTrxIsReadOnly() {
-        return (Integer) get(21);
+        return (Integer) get(22);
     }
 
     /**
      * Setter for <code>information_schema.INNODB_TRX.trx_autocommit_non_locking</code>.
      */
     public void setTrxAutocommitNonLocking(Integer value) {
-        set(22, value);
+        set(23, value);
     }
 
     /**
      * Getter for <code>information_schema.INNODB_TRX.trx_autocommit_non_locking</code>.
      */
     public Integer getTrxAutocommitNonLocking() {
-        return (Integer) get(22);
+        return (Integer) get(23);
     }
 
     // -------------------------------------------------------------------------
@@ -365,7 +379,7 @@ public class InnodbTrxRecord extends TableRecordImpl<InnodbTrxRecord> {
     /**
      * Create a detached, initialised InnodbTrxRecord
      */
-    public InnodbTrxRecord(String trxId, String trxState, Timestamp trxStarted, String trxRequestedLockId, Timestamp trxWaitStarted, ULong trxWeight, ULong trxMysqlThreadId, String trxQuery, String trxOperationState, ULong trxTablesInUse, ULong trxTablesLocked, ULong trxLockStructs, ULong trxLockMemoryBytes, ULong trxRowsLocked, ULong trxRowsModified, ULong trxConcurrencyTickets, String trxIsolationLevel, Integer trxUniqueChecks, Integer trxForeignKeyChecks, String trxLastForeignKeyError, Integer trxAdaptiveHashLatched, Integer trxIsReadOnly, Integer trxAutocommitNonLocking) {
+    public InnodbTrxRecord(String trxId, String trxState, Timestamp trxStarted, String trxRequestedLockId, Timestamp trxWaitStarted, ULong trxWeight, ULong trxMysqlThreadId, String trxQuery, String trxOperationState, ULong trxTablesInUse, ULong trxTablesLocked, ULong trxLockStructs, ULong trxLockMemoryBytes, ULong trxRowsLocked, ULong trxRowsModified, ULong trxConcurrencyTickets, String trxIsolationLevel, Integer trxUniqueChecks, Integer trxForeignKeyChecks, String trxLastForeignKeyError, Integer trxAdaptiveHashLatched, ULong trxAdaptiveHashTimeout, Integer trxIsReadOnly, Integer trxAutocommitNonLocking) {
         super(InnodbTrx.INNODB_TRX);
 
         set(0, trxId);
@@ -389,7 +403,8 @@ public class InnodbTrxRecord extends TableRecordImpl<InnodbTrxRecord> {
         set(18, trxForeignKeyChecks);
         set(19, trxLastForeignKeyError);
         set(20, trxAdaptiveHashLatched);
-        set(21, trxIsReadOnly);
-        set(22, trxAutocommitNonLocking);
+        set(21, trxAdaptiveHashTimeout);
+        set(22, trxIsReadOnly);
+        set(23, trxAutocommitNonLocking);
     }
 }

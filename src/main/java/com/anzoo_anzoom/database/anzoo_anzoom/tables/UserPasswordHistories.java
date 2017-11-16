@@ -41,7 +41,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class UserPasswordHistories extends TableImpl<UserPasswordHistoriesRecord> {
 
-    private static final long serialVersionUID = -1693681572;
+    private static final long serialVersionUID = -1104312037;
 
     /**
      * The reference instance of <code>anzoo_anzoom.user_password_histories</code>
@@ -79,7 +79,7 @@ public class UserPasswordHistories extends TableImpl<UserPasswordHistoriesRecord
     /**
      * The column <code>anzoo_anzoom.user_password_histories.created_at</code>.
      */
-    public final TableField<UserPasswordHistoriesRecord, Timestamp> CREATED_AT = createField("created_at", org.jooq.impl.SQLDataType.TIMESTAMP.nullable(false).defaultValue(org.jooq.impl.DSL.inline("current_timestamp()", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<UserPasswordHistoriesRecord, Timestamp> CREATED_AT = createField("created_at", org.jooq.impl.SQLDataType.TIMESTAMP.nullable(false).defaultValue(org.jooq.impl.DSL.inline("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
 
     /**
      * Create a <code>anzoo_anzoom.user_password_histories</code> table reference

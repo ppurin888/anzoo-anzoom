@@ -31,7 +31,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbFtDefaultStopword extends TableImpl<InnodbFtDefaultStopwordRecord> {
 
-    private static final long serialVersionUID = 1197280346;
+    private static final long serialVersionUID = -1004206982;
 
     /**
      * The reference instance of <code>information_schema.INNODB_FT_DEFAULT_STOPWORD</code>
@@ -49,7 +49,7 @@ public class InnodbFtDefaultStopword extends TableImpl<InnodbFtDefaultStopwordRe
     /**
      * The column <code>information_schema.INNODB_FT_DEFAULT_STOPWORD.value</code>.
      */
-    public final TableField<InnodbFtDefaultStopwordRecord, String> VALUE = createField("value", org.jooq.impl.SQLDataType.VARCHAR(18).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbFtDefaultStopwordRecord, String> VALUE = createField("value", org.jooq.impl.SQLDataType.VARCHAR(18).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * Create a <code>information_schema.INNODB_FT_DEFAULT_STOPWORD</code> table reference

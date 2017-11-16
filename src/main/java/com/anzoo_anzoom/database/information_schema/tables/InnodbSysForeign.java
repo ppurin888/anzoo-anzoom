@@ -32,7 +32,7 @@ import org.jooq.types.UInteger;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbSysForeign extends TableImpl<InnodbSysForeignRecord> {
 
-    private static final long serialVersionUID = -1078632966;
+    private static final long serialVersionUID = -779312422;
 
     /**
      * The reference instance of <code>information_schema.INNODB_SYS_FOREIGN</code>
@@ -50,17 +50,17 @@ public class InnodbSysForeign extends TableImpl<InnodbSysForeignRecord> {
     /**
      * The column <code>information_schema.INNODB_SYS_FOREIGN.ID</code>.
      */
-    public final TableField<InnodbSysForeignRecord, String> ID = createField("ID", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbSysForeignRecord, String> ID = createField("ID", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_SYS_FOREIGN.FOR_NAME</code>.
      */
-    public final TableField<InnodbSysForeignRecord, String> FOR_NAME = createField("FOR_NAME", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbSysForeignRecord, String> FOR_NAME = createField("FOR_NAME", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_SYS_FOREIGN.REF_NAME</code>.
      */
-    public final TableField<InnodbSysForeignRecord, String> REF_NAME = createField("REF_NAME", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbSysForeignRecord, String> REF_NAME = createField("REF_NAME", org.jooq.impl.SQLDataType.VARCHAR(193).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_SYS_FOREIGN.N_COLS</code>.

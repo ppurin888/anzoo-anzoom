@@ -4,22 +4,16 @@
 package com.anzoo_anzoom.database.information_schema;
 
 
-import com.anzoo_anzoom.database.information_schema.tables.AllPlugins;
-import com.anzoo_anzoom.database.information_schema.tables.ApplicableRoles;
 import com.anzoo_anzoom.database.information_schema.tables.CharacterSets;
-import com.anzoo_anzoom.database.information_schema.tables.ClientStatistics;
 import com.anzoo_anzoom.database.information_schema.tables.CollationCharacterSetApplicability;
 import com.anzoo_anzoom.database.information_schema.tables.Collations;
 import com.anzoo_anzoom.database.information_schema.tables.ColumnPrivileges;
 import com.anzoo_anzoom.database.information_schema.tables.Columns;
-import com.anzoo_anzoom.database.information_schema.tables.EnabledRoles;
 import com.anzoo_anzoom.database.information_schema.tables.Engines;
 import com.anzoo_anzoom.database.information_schema.tables.Events;
 import com.anzoo_anzoom.database.information_schema.tables.Files;
-import com.anzoo_anzoom.database.information_schema.tables.GeometryColumns;
 import com.anzoo_anzoom.database.information_schema.tables.GlobalStatus;
 import com.anzoo_anzoom.database.information_schema.tables.GlobalVariables;
-import com.anzoo_anzoom.database.information_schema.tables.IndexStatistics;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbBufferPage;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbBufferPageLru;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbBufferPoolStats;
@@ -38,23 +32,20 @@ import com.anzoo_anzoom.database.information_schema.tables.InnodbFtIndexTable;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbLockWaits;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbLocks;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbMetrics;
-import com.anzoo_anzoom.database.information_schema.tables.InnodbMutexes;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbSysColumns;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbSysDatafiles;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbSysFields;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbSysForeign;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbSysForeignCols;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbSysIndexes;
-import com.anzoo_anzoom.database.information_schema.tables.InnodbSysSemaphoreWaits;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbSysTables;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbSysTablespaces;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbSysTablestats;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbSysVirtual;
-import com.anzoo_anzoom.database.information_schema.tables.InnodbTablespacesEncryption;
-import com.anzoo_anzoom.database.information_schema.tables.InnodbTablespacesScrubbing;
+import com.anzoo_anzoom.database.information_schema.tables.InnodbTempTableInfo;
 import com.anzoo_anzoom.database.information_schema.tables.InnodbTrx;
-import com.anzoo_anzoom.database.information_schema.tables.KeyCaches;
 import com.anzoo_anzoom.database.information_schema.tables.KeyColumnUsage;
+import com.anzoo_anzoom.database.information_schema.tables.OptimizerTrace;
 import com.anzoo_anzoom.database.information_schema.tables.Parameters;
 import com.anzoo_anzoom.database.information_schema.tables.Partitions;
 import com.anzoo_anzoom.database.information_schema.tables.Plugins;
@@ -66,17 +57,12 @@ import com.anzoo_anzoom.database.information_schema.tables.SchemaPrivileges;
 import com.anzoo_anzoom.database.information_schema.tables.Schemata;
 import com.anzoo_anzoom.database.information_schema.tables.SessionStatus;
 import com.anzoo_anzoom.database.information_schema.tables.SessionVariables;
-import com.anzoo_anzoom.database.information_schema.tables.SpatialRefSys;
 import com.anzoo_anzoom.database.information_schema.tables.Statistics;
-import com.anzoo_anzoom.database.information_schema.tables.SystemVariables;
 import com.anzoo_anzoom.database.information_schema.tables.TableConstraints;
 import com.anzoo_anzoom.database.information_schema.tables.TablePrivileges;
-import com.anzoo_anzoom.database.information_schema.tables.TableStatistics;
 import com.anzoo_anzoom.database.information_schema.tables.Tablespaces;
 import com.anzoo_anzoom.database.information_schema.tables.Triggers;
 import com.anzoo_anzoom.database.information_schema.tables.UserPrivileges;
-import com.anzoo_anzoom.database.information_schema.tables.UserStatistics;
-import com.anzoo_anzoom.database.information_schema.tables.UserVariables;
 import com.anzoo_anzoom.database.information_schema.tables.Views;
 
 import javax.annotation.Generated;
@@ -96,24 +82,9 @@ import javax.annotation.Generated;
 public class Tables {
 
     /**
-     * The table <code>information_schema.ALL_PLUGINS</code>.
-     */
-    public static final AllPlugins ALL_PLUGINS = com.anzoo_anzoom.database.information_schema.tables.AllPlugins.ALL_PLUGINS;
-
-    /**
-     * The table <code>information_schema.APPLICABLE_ROLES</code>.
-     */
-    public static final ApplicableRoles APPLICABLE_ROLES = com.anzoo_anzoom.database.information_schema.tables.ApplicableRoles.APPLICABLE_ROLES;
-
-    /**
      * The table <code>information_schema.CHARACTER_SETS</code>.
      */
     public static final CharacterSets CHARACTER_SETS = com.anzoo_anzoom.database.information_schema.tables.CharacterSets.CHARACTER_SETS;
-
-    /**
-     * The table <code>information_schema.CLIENT_STATISTICS</code>.
-     */
-    public static final ClientStatistics CLIENT_STATISTICS = com.anzoo_anzoom.database.information_schema.tables.ClientStatistics.CLIENT_STATISTICS;
 
     /**
      * The table <code>information_schema.COLLATIONS</code>.
@@ -136,11 +107,6 @@ public class Tables {
     public static final ColumnPrivileges COLUMN_PRIVILEGES = com.anzoo_anzoom.database.information_schema.tables.ColumnPrivileges.COLUMN_PRIVILEGES;
 
     /**
-     * The table <code>information_schema.ENABLED_ROLES</code>.
-     */
-    public static final EnabledRoles ENABLED_ROLES = com.anzoo_anzoom.database.information_schema.tables.EnabledRoles.ENABLED_ROLES;
-
-    /**
      * The table <code>information_schema.ENGINES</code>.
      */
     public static final Engines ENGINES = com.anzoo_anzoom.database.information_schema.tables.Engines.ENGINES;
@@ -156,11 +122,6 @@ public class Tables {
     public static final Files FILES = com.anzoo_anzoom.database.information_schema.tables.Files.FILES;
 
     /**
-     * The table <code>information_schema.GEOMETRY_COLUMNS</code>.
-     */
-    public static final GeometryColumns GEOMETRY_COLUMNS = com.anzoo_anzoom.database.information_schema.tables.GeometryColumns.GEOMETRY_COLUMNS;
-
-    /**
      * The table <code>information_schema.GLOBAL_STATUS</code>.
      */
     public static final GlobalStatus GLOBAL_STATUS = com.anzoo_anzoom.database.information_schema.tables.GlobalStatus.GLOBAL_STATUS;
@@ -169,11 +130,6 @@ public class Tables {
      * The table <code>information_schema.GLOBAL_VARIABLES</code>.
      */
     public static final GlobalVariables GLOBAL_VARIABLES = com.anzoo_anzoom.database.information_schema.tables.GlobalVariables.GLOBAL_VARIABLES;
-
-    /**
-     * The table <code>information_schema.INDEX_STATISTICS</code>.
-     */
-    public static final IndexStatistics INDEX_STATISTICS = com.anzoo_anzoom.database.information_schema.tables.IndexStatistics.INDEX_STATISTICS;
 
     /**
      * The table <code>information_schema.INNODB_BUFFER_PAGE</code>.
@@ -266,11 +222,6 @@ public class Tables {
     public static final InnodbMetrics INNODB_METRICS = com.anzoo_anzoom.database.information_schema.tables.InnodbMetrics.INNODB_METRICS;
 
     /**
-     * The table <code>information_schema.INNODB_MUTEXES</code>.
-     */
-    public static final InnodbMutexes INNODB_MUTEXES = com.anzoo_anzoom.database.information_schema.tables.InnodbMutexes.INNODB_MUTEXES;
-
-    /**
      * The table <code>information_schema.INNODB_SYS_COLUMNS</code>.
      */
     public static final InnodbSysColumns INNODB_SYS_COLUMNS = com.anzoo_anzoom.database.information_schema.tables.InnodbSysColumns.INNODB_SYS_COLUMNS;
@@ -301,11 +252,6 @@ public class Tables {
     public static final InnodbSysIndexes INNODB_SYS_INDEXES = com.anzoo_anzoom.database.information_schema.tables.InnodbSysIndexes.INNODB_SYS_INDEXES;
 
     /**
-     * The table <code>information_schema.INNODB_SYS_SEMAPHORE_WAITS</code>.
-     */
-    public static final InnodbSysSemaphoreWaits INNODB_SYS_SEMAPHORE_WAITS = com.anzoo_anzoom.database.information_schema.tables.InnodbSysSemaphoreWaits.INNODB_SYS_SEMAPHORE_WAITS;
-
-    /**
      * The table <code>information_schema.INNODB_SYS_TABLES</code>.
      */
     public static final InnodbSysTables INNODB_SYS_TABLES = com.anzoo_anzoom.database.information_schema.tables.InnodbSysTables.INNODB_SYS_TABLES;
@@ -326,14 +272,9 @@ public class Tables {
     public static final InnodbSysVirtual INNODB_SYS_VIRTUAL = com.anzoo_anzoom.database.information_schema.tables.InnodbSysVirtual.INNODB_SYS_VIRTUAL;
 
     /**
-     * The table <code>information_schema.INNODB_TABLESPACES_ENCRYPTION</code>.
+     * The table <code>information_schema.INNODB_TEMP_TABLE_INFO</code>.
      */
-    public static final InnodbTablespacesEncryption INNODB_TABLESPACES_ENCRYPTION = com.anzoo_anzoom.database.information_schema.tables.InnodbTablespacesEncryption.INNODB_TABLESPACES_ENCRYPTION;
-
-    /**
-     * The table <code>information_schema.INNODB_TABLESPACES_SCRUBBING</code>.
-     */
-    public static final InnodbTablespacesScrubbing INNODB_TABLESPACES_SCRUBBING = com.anzoo_anzoom.database.information_schema.tables.InnodbTablespacesScrubbing.INNODB_TABLESPACES_SCRUBBING;
+    public static final InnodbTempTableInfo INNODB_TEMP_TABLE_INFO = com.anzoo_anzoom.database.information_schema.tables.InnodbTempTableInfo.INNODB_TEMP_TABLE_INFO;
 
     /**
      * The table <code>information_schema.INNODB_TRX</code>.
@@ -341,14 +282,14 @@ public class Tables {
     public static final InnodbTrx INNODB_TRX = com.anzoo_anzoom.database.information_schema.tables.InnodbTrx.INNODB_TRX;
 
     /**
-     * The table <code>information_schema.KEY_CACHES</code>.
-     */
-    public static final KeyCaches KEY_CACHES = com.anzoo_anzoom.database.information_schema.tables.KeyCaches.KEY_CACHES;
-
-    /**
      * The table <code>information_schema.KEY_COLUMN_USAGE</code>.
      */
     public static final KeyColumnUsage KEY_COLUMN_USAGE = com.anzoo_anzoom.database.information_schema.tables.KeyColumnUsage.KEY_COLUMN_USAGE;
+
+    /**
+     * The table <code>information_schema.OPTIMIZER_TRACE</code>.
+     */
+    public static final OptimizerTrace OPTIMIZER_TRACE = com.anzoo_anzoom.database.information_schema.tables.OptimizerTrace.OPTIMIZER_TRACE;
 
     /**
      * The table <code>information_schema.PARAMETERS</code>.
@@ -406,19 +347,9 @@ public class Tables {
     public static final SessionVariables SESSION_VARIABLES = com.anzoo_anzoom.database.information_schema.tables.SessionVariables.SESSION_VARIABLES;
 
     /**
-     * The table <code>information_schema.SPATIAL_REF_SYS</code>.
-     */
-    public static final SpatialRefSys SPATIAL_REF_SYS = com.anzoo_anzoom.database.information_schema.tables.SpatialRefSys.SPATIAL_REF_SYS;
-
-    /**
      * The table <code>information_schema.STATISTICS</code>.
      */
     public static final Statistics STATISTICS = com.anzoo_anzoom.database.information_schema.tables.Statistics.STATISTICS;
-
-    /**
-     * The table <code>information_schema.SYSTEM_VARIABLES</code>.
-     */
-    public static final SystemVariables SYSTEM_VARIABLES = com.anzoo_anzoom.database.information_schema.tables.SystemVariables.SYSTEM_VARIABLES;
 
     /**
      * The table <code>information_schema.TABLES</code>.
@@ -441,11 +372,6 @@ public class Tables {
     public static final TablePrivileges TABLE_PRIVILEGES = com.anzoo_anzoom.database.information_schema.tables.TablePrivileges.TABLE_PRIVILEGES;
 
     /**
-     * The table <code>information_schema.TABLE_STATISTICS</code>.
-     */
-    public static final TableStatistics TABLE_STATISTICS = com.anzoo_anzoom.database.information_schema.tables.TableStatistics.TABLE_STATISTICS;
-
-    /**
      * The table <code>information_schema.TRIGGERS</code>.
      */
     public static final Triggers TRIGGERS = com.anzoo_anzoom.database.information_schema.tables.Triggers.TRIGGERS;
@@ -454,16 +380,6 @@ public class Tables {
      * The table <code>information_schema.USER_PRIVILEGES</code>.
      */
     public static final UserPrivileges USER_PRIVILEGES = com.anzoo_anzoom.database.information_schema.tables.UserPrivileges.USER_PRIVILEGES;
-
-    /**
-     * The table <code>information_schema.USER_STATISTICS</code>.
-     */
-    public static final UserStatistics USER_STATISTICS = com.anzoo_anzoom.database.information_schema.tables.UserStatistics.USER_STATISTICS;
-
-    /**
-     * The table <code>information_schema.user_variables</code>.
-     */
-    public static final UserVariables USER_VARIABLES = com.anzoo_anzoom.database.information_schema.tables.UserVariables.USER_VARIABLES;
 
     /**
      * The table <code>information_schema.VIEWS</code>.

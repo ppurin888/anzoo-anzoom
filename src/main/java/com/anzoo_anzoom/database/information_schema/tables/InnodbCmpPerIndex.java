@@ -31,7 +31,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class InnodbCmpPerIndex extends TableImpl<InnodbCmpPerIndexRecord> {
 
-    private static final long serialVersionUID = -2020039527;
+    private static final long serialVersionUID = -634415047;
 
     /**
      * The reference instance of <code>information_schema.INNODB_CMP_PER_INDEX</code>
@@ -49,17 +49,17 @@ public class InnodbCmpPerIndex extends TableImpl<InnodbCmpPerIndexRecord> {
     /**
      * The column <code>information_schema.INNODB_CMP_PER_INDEX.database_name</code>.
      */
-    public final TableField<InnodbCmpPerIndexRecord, String> DATABASE_NAME = createField("database_name", org.jooq.impl.SQLDataType.VARCHAR(192).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbCmpPerIndexRecord, String> DATABASE_NAME = createField("database_name", org.jooq.impl.SQLDataType.VARCHAR(192).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_CMP_PER_INDEX.table_name</code>.
      */
-    public final TableField<InnodbCmpPerIndexRecord, String> TABLE_NAME = createField("table_name", org.jooq.impl.SQLDataType.VARCHAR(192).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbCmpPerIndexRecord, String> TABLE_NAME = createField("table_name", org.jooq.impl.SQLDataType.VARCHAR(192).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_CMP_PER_INDEX.index_name</code>.
      */
-    public final TableField<InnodbCmpPerIndexRecord, String> INDEX_NAME = createField("index_name", org.jooq.impl.SQLDataType.VARCHAR(192).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<InnodbCmpPerIndexRecord, String> INDEX_NAME = createField("index_name", org.jooq.impl.SQLDataType.VARCHAR(192).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.INNODB_CMP_PER_INDEX.compress_ops</code>.

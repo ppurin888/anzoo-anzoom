@@ -31,7 +31,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class GlobalVariables extends TableImpl<GlobalVariablesRecord> {
 
-    private static final long serialVersionUID = 1222774046;
+    private static final long serialVersionUID = 1365537877;
 
     /**
      * The reference instance of <code>information_schema.GLOBAL_VARIABLES</code>
@@ -49,12 +49,12 @@ public class GlobalVariables extends TableImpl<GlobalVariablesRecord> {
     /**
      * The column <code>information_schema.GLOBAL_VARIABLES.VARIABLE_NAME</code>.
      */
-    public final TableField<GlobalVariablesRecord, String> VARIABLE_NAME = createField("VARIABLE_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<GlobalVariablesRecord, String> VARIABLE_NAME = createField("VARIABLE_NAME", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.GLOBAL_VARIABLES.VARIABLE_VALUE</code>.
      */
-    public final TableField<GlobalVariablesRecord, String> VARIABLE_VALUE = createField("VARIABLE_VALUE", org.jooq.impl.SQLDataType.VARCHAR(2048).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<GlobalVariablesRecord, String> VARIABLE_VALUE = createField("VARIABLE_VALUE", org.jooq.impl.SQLDataType.VARCHAR(1024), this, "");
 
     /**
      * Create a <code>information_schema.GLOBAL_VARIABLES</code> table reference

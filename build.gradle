@@ -33,6 +33,7 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-webflux', version: '2.0.0.M5'
     compile group: 'org.springframework.security', name: 'spring-security-webflux', version: '5.0.0.M5'
     compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.0.0.M5'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.0.0.M5'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-jooq', version: '2.0.0.M5'
 
     compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'

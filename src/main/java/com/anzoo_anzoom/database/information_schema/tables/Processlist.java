@@ -7,8 +7,6 @@ package com.anzoo_anzoom.database.information_schema.tables;
 import com.anzoo_anzoom.database.information_schema.InformationSchema;
 import com.anzoo_anzoom.database.information_schema.tables.records.ProcesslistRecord;
 
-import java.math.BigDecimal;
-
 import javax.annotation.Generated;
 
 import org.jooq.Field;
@@ -18,6 +16,7 @@ import org.jooq.Table;
 import org.jooq.TableField;
 import org.jooq.impl.DSL;
 import org.jooq.impl.TableImpl;
+import org.jooq.types.ULong;
 
 
 /**
@@ -33,7 +32,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Processlist extends TableImpl<ProcesslistRecord> {
 
-    private static final long serialVersionUID = 278104398;
+    private static final long serialVersionUID = 1023227099;
 
     /**
      * The reference instance of <code>information_schema.PROCESSLIST</code>
@@ -51,27 +50,27 @@ public class Processlist extends TableImpl<ProcesslistRecord> {
     /**
      * The column <code>information_schema.PROCESSLIST.ID</code>.
      */
-    public final TableField<ProcesslistRecord, Long> ID = createField("ID", org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BIGINT)), this, "");
+    public final TableField<ProcesslistRecord, ULong> ID = createField("ID", org.jooq.impl.SQLDataType.BIGINTUNSIGNED.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BIGINTUNSIGNED)), this, "");
 
     /**
      * The column <code>information_schema.PROCESSLIST.USER</code>.
      */
-    public final TableField<ProcesslistRecord, String> USER = createField("USER", org.jooq.impl.SQLDataType.VARCHAR(128).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<ProcesslistRecord, String> USER = createField("USER", org.jooq.impl.SQLDataType.VARCHAR(32).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PROCESSLIST.HOST</code>.
      */
-    public final TableField<ProcesslistRecord, String> HOST = createField("HOST", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<ProcesslistRecord, String> HOST = createField("HOST", org.jooq.impl.SQLDataType.VARCHAR(64).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PROCESSLIST.DB</code>.
      */
-    public final TableField<ProcesslistRecord, String> DB = createField("DB", org.jooq.impl.SQLDataType.VARCHAR(64).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<ProcesslistRecord, String> DB = createField("DB", org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * The column <code>information_schema.PROCESSLIST.COMMAND</code>.
      */
-    public final TableField<ProcesslistRecord, String> COMMAND = createField("COMMAND", org.jooq.impl.SQLDataType.VARCHAR(16).nullable(false).defaultValue(org.jooq.impl.DSL.inline("''", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<ProcesslistRecord, String> COMMAND = createField("COMMAND", org.jooq.impl.SQLDataType.VARCHAR(16).nullable(false).defaultValue(org.jooq.impl.DSL.inline("", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
 
     /**
      * The column <code>information_schema.PROCESSLIST.TIME</code>.
@@ -81,57 +80,12 @@ public class Processlist extends TableImpl<ProcesslistRecord> {
     /**
      * The column <code>information_schema.PROCESSLIST.STATE</code>.
      */
-    public final TableField<ProcesslistRecord, String> STATE = createField("STATE", org.jooq.impl.SQLDataType.VARCHAR(64).defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.VARCHAR)), this, "");
+    public final TableField<ProcesslistRecord, String> STATE = createField("STATE", org.jooq.impl.SQLDataType.VARCHAR(64), this, "");
 
     /**
      * The column <code>information_schema.PROCESSLIST.INFO</code>.
      */
-    public final TableField<ProcesslistRecord, String> INFO = createField("INFO", org.jooq.impl.SQLDataType.CLOB.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.CLOB)), this, "");
-
-    /**
-     * The column <code>information_schema.PROCESSLIST.TIME_MS</code>.
-     */
-    public final TableField<ProcesslistRecord, BigDecimal> TIME_MS = createField("TIME_MS", org.jooq.impl.SQLDataType.DECIMAL(22, 3).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.000", org.jooq.impl.SQLDataType.DECIMAL)), this, "");
-
-    /**
-     * The column <code>information_schema.PROCESSLIST.STAGE</code>.
-     */
-    public final TableField<ProcesslistRecord, Byte> STAGE = createField("STAGE", org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.TINYINT)), this, "");
-
-    /**
-     * The column <code>information_schema.PROCESSLIST.MAX_STAGE</code>.
-     */
-    public final TableField<ProcesslistRecord, Byte> MAX_STAGE = createField("MAX_STAGE", org.jooq.impl.SQLDataType.TINYINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.TINYINT)), this, "");
-
-    /**
-     * The column <code>information_schema.PROCESSLIST.PROGRESS</code>.
-     */
-    public final TableField<ProcesslistRecord, BigDecimal> PROGRESS = createField("PROGRESS", org.jooq.impl.SQLDataType.DECIMAL(7, 3).nullable(false).defaultValue(org.jooq.impl.DSL.inline("0.000", org.jooq.impl.SQLDataType.DECIMAL)), this, "");
-
-    /**
-     * The column <code>information_schema.PROCESSLIST.MEMORY_USED</code>.
-     */
-    public final TableField<ProcesslistRecord, Long> MEMORY_USED = createField("MEMORY_USED", org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BIGINT)), this, "");
-
-    /**
-     * The column <code>information_schema.PROCESSLIST.EXAMINED_ROWS</code>.
-     */
-    public final TableField<ProcesslistRecord, Integer> EXAMINED_ROWS = createField("EXAMINED_ROWS", org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.INTEGER)), this, "");
-
-    /**
-     * The column <code>information_schema.PROCESSLIST.QUERY_ID</code>.
-     */
-    public final TableField<ProcesslistRecord, Long> QUERY_ID = createField("QUERY_ID", org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BIGINT)), this, "");
-
-    /**
-     * The column <code>information_schema.PROCESSLIST.INFO_BINARY</code>.
-     */
-    public final TableField<ProcesslistRecord, byte[]> INFO_BINARY = createField("INFO_BINARY", org.jooq.impl.SQLDataType.BLOB.defaultValue(org.jooq.impl.DSL.inline("NULL", org.jooq.impl.SQLDataType.BLOB)), this, "");
-
-    /**
-     * The column <code>information_schema.PROCESSLIST.TID</code>.
-     */
-    public final TableField<ProcesslistRecord, Long> TID = createField("TID", org.jooq.impl.SQLDataType.BIGINT.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0", org.jooq.impl.SQLDataType.BIGINT)), this, "");
+    public final TableField<ProcesslistRecord, String> INFO = createField("INFO", org.jooq.impl.SQLDataType.CLOB, this, "");
 
     /**
      * Create a <code>information_schema.PROCESSLIST</code> table reference
