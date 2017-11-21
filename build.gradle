@@ -37,6 +37,8 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-jooq', version: '2.0.0.M5'
 
     compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
+
+    compile group: 'com.auth0', name: 'java-jwt', version: '3.3.0'
 }
 
 def props = new Properties()

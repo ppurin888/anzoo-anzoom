@@ -54,7 +54,7 @@ public class Keys {
     // -------------------------------------------------------------------------
 
     public static final Identity<AnjuTagsRecord, Integer> IDENTITY_ANJU_TAGS = Identities0.IDENTITY_ANJU_TAGS;
-    public static final Identity<AuthenticationAccessTokensRecord, Long> IDENTITY_AUTHENTICATION_ACCESS_TOKENS = Identities0.IDENTITY_AUTHENTICATION_ACCESS_TOKENS;
+    public static final Identity<AuthenticationAccessTokensRecord, Integer> IDENTITY_AUTHENTICATION_ACCESS_TOKENS = Identities0.IDENTITY_AUTHENTICATION_ACCESS_TOKENS;
     public static final Identity<CommentsRecord, Integer> IDENTITY_COMMENTS = Identities0.IDENTITY_COMMENTS;
     public static final Identity<PostsRecord, Integer> IDENTITY_POSTS = Identities0.IDENTITY_POSTS;
     public static final Identity<UsersRecord, Integer> IDENTITY_USERS = Identities0.IDENTITY_USERS;
@@ -78,6 +78,7 @@ public class Keys {
     public static final UniqueKey<UsersRecord> KEY_USERS_PRIMARY = UniqueKeys0.KEY_USERS_PRIMARY;
     public static final UniqueKey<UsersRecord> KEY_USERS_USERS_AUTH_ID_UINDEX = UniqueKeys0.KEY_USERS_USERS_AUTH_ID_UINDEX;
     public static final UniqueKey<UserContactInfosRecord> KEY_USER_CONTACT_INFOS_PRIMARY = UniqueKeys0.KEY_USER_CONTACT_INFOS_PRIMARY;
+    public static final UniqueKey<UserContactInfosRecord> KEY_USER_CONTACT_INFOS_USER_CONTACT_INFOS_INFO_USER_ID_TYPE_ID_UINDEX = UniqueKeys0.KEY_USER_CONTACT_INFOS_USER_CONTACT_INFOS_INFO_USER_ID_TYPE_ID_UINDEX;
     public static final UniqueKey<UserContactInfosRecord> KEY_USER_CONTACT_INFOS_USER_CONTACT_INFOS_USER_ID_TYPE_ID_UINDEX = UniqueKeys0.KEY_USER_CONTACT_INFOS_USER_CONTACT_INFOS_USER_ID_TYPE_ID_UINDEX;
     public static final UniqueKey<UserContactInfoTypesRecord> KEY_USER_CONTACT_INFO_TYPES_PRIMARY = UniqueKeys0.KEY_USER_CONTACT_INFO_TYPES_PRIMARY;
     public static final UniqueKey<UserContactInfoTypesRecord> KEY_USER_CONTACT_INFO_TYPES_USER_CONTACT_INFO_TYPES_TYPE_NAME_UINDEX = UniqueKeys0.KEY_USER_CONTACT_INFO_TYPES_USER_CONTACT_INFO_TYPES_TYPE_NAME_UINDEX;
@@ -110,7 +111,7 @@ public class Keys {
 
     private static class Identities0 extends AbstractKeys {
         public static Identity<AnjuTagsRecord, Integer> IDENTITY_ANJU_TAGS = createIdentity(AnjuTags.ANJU_TAGS, AnjuTags.ANJU_TAGS.ID);
-        public static Identity<AuthenticationAccessTokensRecord, Long> IDENTITY_AUTHENTICATION_ACCESS_TOKENS = createIdentity(AuthenticationAccessTokens.AUTHENTICATION_ACCESS_TOKENS, AuthenticationAccessTokens.AUTHENTICATION_ACCESS_TOKENS.ID);
+        public static Identity<AuthenticationAccessTokensRecord, Integer> IDENTITY_AUTHENTICATION_ACCESS_TOKENS = createIdentity(AuthenticationAccessTokens.AUTHENTICATION_ACCESS_TOKENS, AuthenticationAccessTokens.AUTHENTICATION_ACCESS_TOKENS.ID);
         public static Identity<CommentsRecord, Integer> IDENTITY_COMMENTS = createIdentity(Comments.COMMENTS, Comments.COMMENTS.ID);
         public static Identity<PostsRecord, Integer> IDENTITY_POSTS = createIdentity(Posts.POSTS, Posts.POSTS.ID);
         public static Identity<UsersRecord, Integer> IDENTITY_USERS = createIdentity(Users.USERS, Users.USERS.ID);
@@ -132,6 +133,7 @@ public class Keys {
         public static final UniqueKey<UsersRecord> KEY_USERS_PRIMARY = createUniqueKey(Users.USERS, "KEY_users_PRIMARY", Users.USERS.ID);
         public static final UniqueKey<UsersRecord> KEY_USERS_USERS_AUTH_ID_UINDEX = createUniqueKey(Users.USERS, "KEY_users_users_auth_id_uindex", Users.USERS.AUTH_ID);
         public static final UniqueKey<UserContactInfosRecord> KEY_USER_CONTACT_INFOS_PRIMARY = createUniqueKey(UserContactInfos.USER_CONTACT_INFOS, "KEY_user_contact_infos_PRIMARY", UserContactInfos.USER_CONTACT_INFOS.ID);
+        public static final UniqueKey<UserContactInfosRecord> KEY_USER_CONTACT_INFOS_USER_CONTACT_INFOS_INFO_USER_ID_TYPE_ID_UINDEX = createUniqueKey(UserContactInfos.USER_CONTACT_INFOS, "KEY_user_contact_infos_user_contact_infos_info_user_id_type_id_uindex", UserContactInfos.USER_CONTACT_INFOS.INFO, UserContactInfos.USER_CONTACT_INFOS.USER_ID, UserContactInfos.USER_CONTACT_INFOS.TYPE_ID);
         public static final UniqueKey<UserContactInfosRecord> KEY_USER_CONTACT_INFOS_USER_CONTACT_INFOS_USER_ID_TYPE_ID_UINDEX = createUniqueKey(UserContactInfos.USER_CONTACT_INFOS, "KEY_user_contact_infos_user_contact_infos_user_id_type_id_uindex", UserContactInfos.USER_CONTACT_INFOS.USER_ID, UserContactInfos.USER_CONTACT_INFOS.TYPE_ID);
         public static final UniqueKey<UserContactInfoTypesRecord> KEY_USER_CONTACT_INFO_TYPES_PRIMARY = createUniqueKey(UserContactInfoTypes.USER_CONTACT_INFO_TYPES, "KEY_user_contact_info_types_PRIMARY", UserContactInfoTypes.USER_CONTACT_INFO_TYPES.ID);
         public static final UniqueKey<UserContactInfoTypesRecord> KEY_USER_CONTACT_INFO_TYPES_USER_CONTACT_INFO_TYPES_TYPE_NAME_UINDEX = createUniqueKey(UserContactInfoTypes.USER_CONTACT_INFO_TYPES, "KEY_user_contact_info_types_user_contact_info_types_type_name_uindex", UserContactInfoTypes.USER_CONTACT_INFO_TYPES.TYPE_NAME);

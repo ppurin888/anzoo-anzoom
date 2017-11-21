@@ -53,6 +53,7 @@ public class Indexes {
     public static final Index USERS_USERS_AUTH_ID_UINDEX = Indexes0.USERS_USERS_AUTH_ID_UINDEX;
     public static final Index USERS_USERS_USER_PASSWORD_ENCRYPTION_TYPES_ID_FK = Indexes0.USERS_USERS_USER_PASSWORD_ENCRYPTION_TYPES_ID_FK;
     public static final Index USER_CONTACT_INFOS_PRIMARY = Indexes0.USER_CONTACT_INFOS_PRIMARY;
+    public static final Index USER_CONTACT_INFOS_USER_CONTACT_INFOS_INFO_USER_ID_TYPE_ID_UINDEX = Indexes0.USER_CONTACT_INFOS_USER_CONTACT_INFOS_INFO_USER_ID_TYPE_ID_UINDEX;
     public static final Index USER_CONTACT_INFOS_USER_CONTACT_INFOS_USER_CONTACT_INFO_TYPES_ID_FK = Indexes0.USER_CONTACT_INFOS_USER_CONTACT_INFOS_USER_CONTACT_INFO_TYPES_ID_FK;
     public static final Index USER_CONTACT_INFOS_USER_CONTACT_INFOS_USER_ID_TYPE_ID_UINDEX = Indexes0.USER_CONTACT_INFOS_USER_CONTACT_INFOS_USER_ID_TYPE_ID_UINDEX;
     public static final Index USER_CONTACT_INFO_TYPES_PRIMARY = Indexes0.USER_CONTACT_INFO_TYPES_PRIMARY;
@@ -86,6 +87,7 @@ public class Indexes {
         public static Index USERS_USERS_AUTH_ID_UINDEX = createIndex("users_auth_id_uindex", Users.USERS, new OrderField[] { Users.USERS.AUTH_ID }, true);
         public static Index USERS_USERS_USER_PASSWORD_ENCRYPTION_TYPES_ID_FK = createIndex("users_user_password_encryption_types_id_fk", Users.USERS, new OrderField[] { Users.USERS.PASSWORD_ENCRYPTION_TYPE_ID }, false);
         public static Index USER_CONTACT_INFOS_PRIMARY = createIndex("PRIMARY", UserContactInfos.USER_CONTACT_INFOS, new OrderField[] { UserContactInfos.USER_CONTACT_INFOS.ID }, true);
+        public static Index USER_CONTACT_INFOS_USER_CONTACT_INFOS_INFO_USER_ID_TYPE_ID_UINDEX = createIndex("user_contact_infos_info_user_id_type_id_uindex", UserContactInfos.USER_CONTACT_INFOS, new OrderField[] { UserContactInfos.USER_CONTACT_INFOS.INFO, UserContactInfos.USER_CONTACT_INFOS.USER_ID, UserContactInfos.USER_CONTACT_INFOS.TYPE_ID }, true);
         public static Index USER_CONTACT_INFOS_USER_CONTACT_INFOS_USER_CONTACT_INFO_TYPES_ID_FK = createIndex("user_contact_infos_user_contact_info_types_id_fk", UserContactInfos.USER_CONTACT_INFOS, new OrderField[] { UserContactInfos.USER_CONTACT_INFOS.TYPE_ID }, false);
         public static Index USER_CONTACT_INFOS_USER_CONTACT_INFOS_USER_ID_TYPE_ID_UINDEX = createIndex("user_contact_infos_user_id_type_id_uindex", UserContactInfos.USER_CONTACT_INFOS, new OrderField[] { UserContactInfos.USER_CONTACT_INFOS.USER_ID, UserContactInfos.USER_CONTACT_INFOS.TYPE_ID }, true);
         public static Index USER_CONTACT_INFO_TYPES_PRIMARY = createIndex("PRIMARY", UserContactInfoTypes.USER_CONTACT_INFO_TYPES, new OrderField[] { UserContactInfoTypes.USER_CONTACT_INFO_TYPES.ID }, true);

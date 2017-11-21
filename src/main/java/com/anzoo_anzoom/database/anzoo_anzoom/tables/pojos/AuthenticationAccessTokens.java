@@ -23,9 +23,9 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class AuthenticationAccessTokens implements Serializable {
 
-    private static final long serialVersionUID = -1176765808;
+    private static final long serialVersionUID = -562550476;
 
-    private Long      id;
+    private Integer   id;
     private Integer   userId;
     private String    accessToken;
     private Timestamp expiredAt;
@@ -44,7 +44,7 @@ public class AuthenticationAccessTokens implements Serializable {
     }
 
     public AuthenticationAccessTokens(
-        Long      id,
+        Integer   id,
         Integer   userId,
         String    accessToken,
         Timestamp expiredAt,
@@ -59,11 +59,11 @@ public class AuthenticationAccessTokens implements Serializable {
         this.deletedAt = deletedAt;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

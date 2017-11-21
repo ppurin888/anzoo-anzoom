@@ -18,9 +18,9 @@ public class SignUpPresenter {
                            @JsonProperty(value = "email") String email,
                            @JsonProperty(value = "phone_number") String phoneNumber) {
         this.authId = authId;
-        this.fullName = fullName;
+        this.fullName = new String(fullName.getBytes(), StandardCharsets.UTF_8);
         this.password = new String(password.getBytes(), StandardCharsets.UTF_8);
-        this.email = email;
+        this.email = new String(email.getBytes(), StandardCharsets.UTF_8);
         this.phoneNumber = phoneNumber;
     }
 

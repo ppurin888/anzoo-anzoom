@@ -9,6 +9,7 @@ import com.anzoo_anzoom.database.anzoo_anzoom.Indexes;
 import com.anzoo_anzoom.database.anzoo_anzoom.Keys;
 import com.anzoo_anzoom.database.anzoo_anzoom.tables.records.UserContactInfosRecord;
 
+import java.sql.Timestamp;
 import java.util.Arrays;
 import java.util.List;
 
@@ -40,7 +41,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class UserContactInfos extends TableImpl<UserContactInfosRecord> {
 
-    private static final long serialVersionUID = -216016531;
+    private static final long serialVersionUID = 2097761098;
 
     /**
      * The reference instance of <code>anzoo_anzoom.user_contact_infos</code>
@@ -61,6 +62,11 @@ public class UserContactInfos extends TableImpl<UserContactInfosRecord> {
     public final TableField<UserContactInfosRecord, Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false).identity(true), this, "");
 
     /**
+     * The column <code>anzoo_anzoom.user_contact_infos.info</code>.
+     */
+    public final TableField<UserContactInfosRecord, String> INFO = createField("info", org.jooq.impl.SQLDataType.VARCHAR(512).nullable(false), this, "");
+
+    /**
      * The column <code>anzoo_anzoom.user_contact_infos.user_id</code>.
      */
     public final TableField<UserContactInfosRecord, Integer> USER_ID = createField("user_id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
@@ -69,6 +75,21 @@ public class UserContactInfos extends TableImpl<UserContactInfosRecord> {
      * The column <code>anzoo_anzoom.user_contact_infos.type_id</code>.
      */
     public final TableField<UserContactInfosRecord, Integer> TYPE_ID = createField("type_id", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
+
+    /**
+     * The column <code>anzoo_anzoom.user_contact_infos.created_at</code>.
+     */
+    public final TableField<UserContactInfosRecord, Timestamp> CREATED_AT = createField("created_at", org.jooq.impl.SQLDataType.TIMESTAMP.nullable(false).defaultValue(org.jooq.impl.DSL.inline("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+
+    /**
+     * The column <code>anzoo_anzoom.user_contact_infos.updated_at</code>.
+     */
+    public final TableField<UserContactInfosRecord, Timestamp> UPDATED_AT = createField("updated_at", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
+
+    /**
+     * The column <code>anzoo_anzoom.user_contact_infos.deleted_at</code>.
+     */
+    public final TableField<UserContactInfosRecord, Timestamp> DELETED_AT = createField("deleted_at", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
      * Create a <code>anzoo_anzoom.user_contact_infos</code> table reference
@@ -112,7 +133,7 @@ public class UserContactInfos extends TableImpl<UserContactInfosRecord> {
      */
     @Override
     public List<Index> getIndexes() {
-        return Arrays.<Index>asList(Indexes.USER_CONTACT_INFOS_PRIMARY, Indexes.USER_CONTACT_INFOS_USER_CONTACT_INFOS_USER_CONTACT_INFO_TYPES_ID_FK, Indexes.USER_CONTACT_INFOS_USER_CONTACT_INFOS_USER_ID_TYPE_ID_UINDEX);
+        return Arrays.<Index>asList(Indexes.USER_CONTACT_INFOS_PRIMARY, Indexes.USER_CONTACT_INFOS_USER_CONTACT_INFOS_INFO_USER_ID_TYPE_ID_UINDEX, Indexes.USER_CONTACT_INFOS_USER_CONTACT_INFOS_USER_CONTACT_INFO_TYPES_ID_FK, Indexes.USER_CONTACT_INFOS_USER_CONTACT_INFOS_USER_ID_TYPE_ID_UINDEX);
     }
 
     /**
@@ -136,7 +157,7 @@ public class UserContactInfos extends TableImpl<UserContactInfosRecord> {
      */
     @Override
     public List<UniqueKey<UserContactInfosRecord>> getKeys() {
-        return Arrays.<UniqueKey<UserContactInfosRecord>>asList(Keys.KEY_USER_CONTACT_INFOS_PRIMARY, Keys.KEY_USER_CONTACT_INFOS_USER_CONTACT_INFOS_USER_ID_TYPE_ID_UINDEX);
+        return Arrays.<UniqueKey<UserContactInfosRecord>>asList(Keys.KEY_USER_CONTACT_INFOS_PRIMARY, Keys.KEY_USER_CONTACT_INFOS_USER_CONTACT_INFOS_INFO_USER_ID_TYPE_ID_UINDEX, Keys.KEY_USER_CONTACT_INFOS_USER_CONTACT_INFOS_USER_ID_TYPE_ID_UINDEX);
     }
 
     /**

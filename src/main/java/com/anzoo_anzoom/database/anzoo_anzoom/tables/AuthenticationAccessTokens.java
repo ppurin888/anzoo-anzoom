@@ -41,7 +41,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class AuthenticationAccessTokens extends TableImpl<AuthenticationAccessTokensRecord> {
 
-    private static final long serialVersionUID = -1666431580;
+    private static final long serialVersionUID = -1985418541;
 
     /**
      * The reference instance of <code>anzoo_anzoom.authentication_access_tokens</code>
@@ -59,7 +59,7 @@ public class AuthenticationAccessTokens extends TableImpl<AuthenticationAccessTo
     /**
      * The column <code>anzoo_anzoom.authentication_access_tokens.id</code>.
      */
-    public final TableField<AuthenticationAccessTokensRecord, Long> ID = createField("id", org.jooq.impl.SQLDataType.BIGINT.nullable(false).identity(true), this, "");
+    public final TableField<AuthenticationAccessTokensRecord, Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false).identity(true), this, "");
 
     /**
      * The column <code>anzoo_anzoom.authentication_access_tokens.user_id</code>.
@@ -135,7 +135,7 @@ public class AuthenticationAccessTokens extends TableImpl<AuthenticationAccessTo
      * {@inheritDoc}
      */
     @Override
-    public Identity<AuthenticationAccessTokensRecord, Long> getIdentity() {
+    public Identity<AuthenticationAccessTokensRecord, Integer> getIdentity() {
         return Keys.IDENTITY_AUTHENTICATION_ACCESS_TOKENS;
     }
 

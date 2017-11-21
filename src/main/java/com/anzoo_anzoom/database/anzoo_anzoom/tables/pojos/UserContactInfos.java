@@ -5,6 +5,7 @@ package com.anzoo_anzoom.database.anzoo_anzoom.tables.pojos;
 
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 import javax.annotation.Generated;
 
@@ -22,28 +23,44 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class UserContactInfos implements Serializable {
 
-    private static final long serialVersionUID = 1703129783;
+    private static final long serialVersionUID = -1993640990;
 
-    private Integer id;
-    private Integer userId;
-    private Integer typeId;
+    private Integer   id;
+    private String    info;
+    private Integer   userId;
+    private Integer   typeId;
+    private Timestamp createdAt;
+    private Timestamp updatedAt;
+    private Timestamp deletedAt;
 
     public UserContactInfos() {}
 
     public UserContactInfos(UserContactInfos value) {
         this.id = value.id;
+        this.info = value.info;
         this.userId = value.userId;
         this.typeId = value.typeId;
+        this.createdAt = value.createdAt;
+        this.updatedAt = value.updatedAt;
+        this.deletedAt = value.deletedAt;
     }
 
     public UserContactInfos(
-        Integer id,
-        Integer userId,
-        Integer typeId
+        Integer   id,
+        String    info,
+        Integer   userId,
+        Integer   typeId,
+        Timestamp createdAt,
+        Timestamp updatedAt,
+        Timestamp deletedAt
     ) {
         this.id = id;
+        this.info = info;
         this.userId = userId;
         this.typeId = typeId;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.deletedAt = deletedAt;
     }
 
     public Integer getId() {
@@ -52,6 +69,14 @@ public class UserContactInfos implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getInfo() {
+        return this.info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
     }
 
     public Integer getUserId() {
@@ -70,13 +95,41 @@ public class UserContactInfos implements Serializable {
         this.typeId = typeId;
     }
 
+    public Timestamp getCreatedAt() {
+        return this.createdAt;
+    }
+
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Timestamp getUpdatedAt() {
+        return this.updatedAt;
+    }
+
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public Timestamp getDeletedAt() {
+        return this.deletedAt;
+    }
+
+    public void setDeletedAt(Timestamp deletedAt) {
+        this.deletedAt = deletedAt;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("UserContactInfos (");
 
         sb.append(id);
+        sb.append(", ").append(info);
         sb.append(", ").append(userId);
         sb.append(", ").append(typeId);
+        sb.append(", ").append(createdAt);
+        sb.append(", ").append(updatedAt);
+        sb.append(", ").append(deletedAt);
 
         sb.append(")");
         return sb.toString();

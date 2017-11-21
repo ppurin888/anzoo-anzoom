@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
 --
--- Host: 127.0.0.1    Database: 
+-- Host: 127.0.0.1    Database: anzoo_anzoom
 -- ------------------------------------------------------
 -- Server version	5.7.20-0ubuntu0.16.04.1
 
@@ -14,14 +14,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Current Database: `anzoo_anzoom`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `anzoo_anzoom` /*!40100 DEFAULT CHARACTER SET latin1 */;
-
-USE `anzoo_anzoom`;
 
 --
 -- Table structure for table `anju_tags`
@@ -46,35 +38,6 @@ CREATE TABLE `anju_tags` (
 LOCK TABLES `anju_tags` WRITE;
 /*!40000 ALTER TABLE `anju_tags` DISABLE KEYS */;
 /*!40000 ALTER TABLE `anju_tags` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `authentication_access_tokens`
---
-
-DROP TABLE IF EXISTS `authentication_access_tokens`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `authentication_access_tokens` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `access_token` varchar(512) CHARACTER SET utf8 NOT NULL,
-  `expired_at` datetime NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `deleted_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `authentication_access_tokens_auth_id_access_token_uindex` (`user_id`,`access_token`),
-  CONSTRAINT `authentication_access_tokens_users_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `authentication_access_tokens`
---
-
-LOCK TABLES `authentication_access_tokens` WRITE;
-/*!40000 ALTER TABLE `authentication_access_tokens` DISABLE KEYS */;
-/*!40000 ALTER TABLE `authentication_access_tokens` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -157,7 +120,7 @@ CREATE TABLE `user_contact_info_types` (
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_contact_info_types_type_name_uindex` (`type_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -166,6 +129,8 @@ CREATE TABLE `user_contact_info_types` (
 
 LOCK TABLES `user_contact_info_types` WRITE;
 /*!40000 ALTER TABLE `user_contact_info_types` DISABLE KEYS */;
+INSERT INTO `user_contact_info_types` VALUES (1,'email','2017-11-16 16:09:42',NULL,NULL);
+INSERT INTO `user_contact_info_types` VALUES (2,'phone_number','2017-11-16 16:09:42',NULL,NULL);
 /*!40000 ALTER TABLE `user_contact_info_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,10 +143,15 @@ DROP TABLE IF EXISTS `user_contact_infos`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_contact_infos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `info` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` int(11) NOT NULL,
   `type_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_contact_infos_user_id_type_id_uindex` (`user_id`,`type_id`),
+  UNIQUE KEY `user_contact_infos_info_user_id_type_id_uindex` (`info`,`user_id`,`type_id`),
   KEY `user_contact_infos_user_contact_info_types_id_fk` (`type_id`),
   CONSTRAINT `user_contact_infos_user_contact_info_types_id_fk` FOREIGN KEY (`type_id`) REFERENCES `user_contact_info_types` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `user_contact_infos_users_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE
@@ -273,7 +243,7 @@ CREATE TABLE `user_password_encryption_types` (
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_password_encryption_types_type_name_secret_key_uindex` (`type_name`,`secret_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -282,6 +252,7 @@ CREATE TABLE `user_password_encryption_types` (
 
 LOCK TABLES `user_password_encryption_types` WRITE;
 /*!40000 ALTER TABLE `user_password_encryption_types` DISABLE KEYS */;
+INSERT INTO `user_password_encryption_types` VALUES (2,'bcrypt',NULL,'cost = 12','https://en.wikipedia.org/wiki/Bcrypt','2017-11-16 16:40:06',NULL);
 /*!40000 ALTER TABLE `user_password_encryption_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -353,4 +324,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-16 16:06:52
+-- Dump completed on 2017-11-21 11:04:13

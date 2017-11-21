@@ -7,6 +7,7 @@ package com.anzoo_anzoom.database.anzoo_anzoom.tables.daos;
 import com.anzoo_anzoom.database.anzoo_anzoom.tables.UserContactInfos;
 import com.anzoo_anzoom.database.anzoo_anzoom.tables.records.UserContactInfosRecord;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.annotation.Generated;
@@ -65,6 +66,13 @@ public class UserContactInfosDao extends DAOImpl<UserContactInfosRecord, com.anz
     }
 
     /**
+     * Fetch records that have <code>info IN (values)</code>
+     */
+    public List<com.anzoo_anzoom.database.anzoo_anzoom.tables.pojos.UserContactInfos> fetchByInfo(String... values) {
+        return fetch(UserContactInfos.USER_CONTACT_INFOS.INFO, values);
+    }
+
+    /**
      * Fetch records that have <code>user_id IN (values)</code>
      */
     public List<com.anzoo_anzoom.database.anzoo_anzoom.tables.pojos.UserContactInfos> fetchByUserId(Integer... values) {
@@ -76,5 +84,26 @@ public class UserContactInfosDao extends DAOImpl<UserContactInfosRecord, com.anz
      */
     public List<com.anzoo_anzoom.database.anzoo_anzoom.tables.pojos.UserContactInfos> fetchByTypeId(Integer... values) {
         return fetch(UserContactInfos.USER_CONTACT_INFOS.TYPE_ID, values);
+    }
+
+    /**
+     * Fetch records that have <code>created_at IN (values)</code>
+     */
+    public List<com.anzoo_anzoom.database.anzoo_anzoom.tables.pojos.UserContactInfos> fetchByCreatedAt(Timestamp... values) {
+        return fetch(UserContactInfos.USER_CONTACT_INFOS.CREATED_AT, values);
+    }
+
+    /**
+     * Fetch records that have <code>updated_at IN (values)</code>
+     */
+    public List<com.anzoo_anzoom.database.anzoo_anzoom.tables.pojos.UserContactInfos> fetchByUpdatedAt(Timestamp... values) {
+        return fetch(UserContactInfos.USER_CONTACT_INFOS.UPDATED_AT, values);
+    }
+
+    /**
+     * Fetch records that have <code>deleted_at IN (values)</code>
+     */
+    public List<com.anzoo_anzoom.database.anzoo_anzoom.tables.pojos.UserContactInfos> fetchByDeletedAt(Timestamp... values) {
+        return fetch(UserContactInfos.USER_CONTACT_INFOS.DELETED_AT, values);
     }
 }
