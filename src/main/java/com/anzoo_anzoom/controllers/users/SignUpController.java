@@ -1,6 +1,7 @@
 package com.anzoo_anzoom.controllers.users;
 
 import com.anzoo_anzoom.database.anzoo_anzoom.tables.*;
+
 import com.anzoo_anzoom.database.anzoo_anzoom.tables.records.UserContactInfosRecord;
 import com.anzoo_anzoom.database.anzoo_anzoom.tables.records.UsersRecord;
 import com.anzoo_anzoom.presenters.SignUpPresenter;
@@ -19,11 +20,12 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8;
 
 @Component
 public class SignUpController {
@@ -45,8 +47,7 @@ public class SignUpController {
         //   1. auth_id 중복 여부
         // 3. 패스워드 암호화(bcrypt)
         // 4. Insert
-        // 5. 해당 계정으로 access token 발급
-        // 6. JWT 생성
+        // 5. JWT 생성
 
         // Sample response
         // bodyToMono: RequestBody(가상) -> Mono<Body>(가상) -> Mono<SignUpPresenter>
@@ -80,7 +81,7 @@ public class SignUpController {
                         resultMap.put("success", false);
                         resultMap.put("message", "아이디가 중복되었습니다.");
 
-                        return ServerResponse.ok().contentType(APPLICATION_JSON).body(Mono.just(resultMap), new ParameterizedTypeReference<>() {});
+                        return ServerResponse.ok().contentType(APPLICATION_JSON_UTF8).body(Mono.just(resultMap), new ParameterizedTypeReference<>() {});
                     } else {
                         String encryptedPassword = BCrypt.hashpw(presenter.getPassword(), BCrypt.gensalt(12));
 
@@ -95,11 +96,11 @@ public class SignUpController {
                             resultMap.put("success", false);
                             resultMap.put("message", "해당하는 암호화 알고리즘이 없습니다.");
 
-                            return ServerResponse.ok().contentType(APPLICATION_JSON).body(Mono.just(resultMap), new ParameterizedTypeReference<>() {});
+                            return ServerResponse.ok().contentType(APPLICATION_JSON_UTF8).body(Mono.just(resultMap), new ParameterizedTypeReference<>() {});
                         }
 
                         user.setAuthId(presenter.getAuthId());
-                        user.setEncryptedPassword(encryptedPassword.getBytes());
+                        user.setEncryptedPassword(encryptedPassword.getBytes(StandardCharsets.UTF_8));
                         user.setFullName(presenter.getFullName());
                         user.setPasswordEncryptionTypeId(encryptionTypeId.getValue(0, encryptionTypes.ID));
 
@@ -107,26 +108,6 @@ public class SignUpController {
 
                         UserContactInfoTypes contactInfoTypes = UserContactInfoTypes.USER_CONTACT_INFO_TYPES;
                         UserContactInfos contactInfos = UserContactInfos.USER_CONTACT_INFOS;
-
-//                        // Case 1:
-//                        Result<Record2<Integer, String>> contactInfoTypesResult = dsl.select(contactInfoTypes.ID, contactInfoTypes.TYPE_NAME)
-//                           .from(contactInfoTypes)
-//                           .where(contactInfoTypes.TYPE_NAME.eq("email").or(contactInfoTypes.TYPE_NAME.eq("phone_number")))
-//                           .and(contactInfoTypes.DELETED_AT.isNull())
-//                           .fetch();
-//
-//                        contactInfoTypesResult.forEach(record -> {
-//                            String typeName = record.getValue(contactInfoTypes.TYPE_NAME.getName(), String.class);
-//
-//                            String info = typeName.equals("email") ? presenter.getEmail() : presenter.getPhoneNumber();
-//
-//                            UserContactInfosRecord userContactInfosRecord = new UserContactInfosRecord();
-//                            userContactInfosRecord.setUserId(userId.getValue(users.ID, Integer.class));
-//                            userContactInfosRecord.setTypeId(record.getValue(contactInfoTypes.ID.getName(), Integer.class));
-//                            userContactInfosRecord.setInfo(info);
-//
-//                            dsl.insertInto(contactInfos).values(contactInfos).execute();
-//                        });
 
                         Record1<Integer> contactInfoTypeEmailId = dsl.select(contactInfoTypes.ID)
                            .from(contactInfoTypes)
@@ -168,7 +149,7 @@ public class SignUpController {
                             resultMap.put("success", true);
                             resultMap.put("message", "회원가입이 완료되었습니다.");
 
-                            return ServerResponse.ok().header(HttpHeaders.AUTHORIZATION, "Bearer " + token).contentType(APPLICATION_JSON).body(Mono.just(resultMap), new ParameterizedTypeReference<>() {});
+                            return ServerResponse.ok().header(HttpHeaders.AUTHORIZATION, "Bearer " + token).contentType(APPLICATION_JSON_UTF8).body(Mono.just(resultMap), new ParameterizedTypeReference<>() {});
                         } catch (UnsupportedEncodingException ex) {
                             // Do nothing
                         }

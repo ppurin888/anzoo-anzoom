@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
 --
--- Host: 127.0.0.1    Database: anzoo_anzoom
+-- Host: 127.0.0.1    Database: 
 -- ------------------------------------------------------
 -- Server version	5.7.20-0ubuntu0.16.04.1
 
@@ -14,6 +14,14 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `anzoo_anzoom`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `anzoo_anzoom` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `anzoo_anzoom`;
 
 --
 -- Table structure for table `anju_tags`
@@ -155,7 +163,7 @@ CREATE TABLE `user_contact_infos` (
   KEY `user_contact_infos_user_contact_info_types_id_fk` (`type_id`),
   CONSTRAINT `user_contact_infos_user_contact_info_types_id_fk` FOREIGN KEY (`type_id`) REFERENCES `user_contact_info_types` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `user_contact_infos_users_id_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -265,7 +273,7 @@ DROP TABLE IF EXISTS `user_password_histories`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_password_histories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `encrypted_password` binary(64) NOT NULL,
+  `encrypted_password` varbinary(256) NOT NULL,
   `encryption_type_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -297,13 +305,16 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `full_name` varchar(50) CHARACTER SET utf8 NOT NULL,
   `auth_id` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `encrypted_password` binary(64) NOT NULL,
+  `encrypted_password` varbinary(256) NOT NULL,
   `password_encryption_type_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_auth_id_uindex` (`auth_id`),
   KEY `users_user_password_encryption_types_id_fk` (`password_encryption_type_id`),
   CONSTRAINT `users_user_password_encryption_types_id_fk` FOREIGN KEY (`password_encryption_type_id`) REFERENCES `user_password_encryption_types` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -312,6 +323,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (3,'안주안줌','anzoo-anzoom','$2a$12$dunvRet6AI0898.6cmGTzu9iMgqQum71hdCN0si4W/ug1qwHQGQIq\0\0\0\0',2,'2017-11-22 16:04:11',NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -324,4 +336,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-21 11:04:13
+-- Dump completed on 2017-11-22 16:09:56
